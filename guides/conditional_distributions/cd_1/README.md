@@ -1,6 +1,6 @@
 ## Conditional Distribution I
 
-**Core intuition:** a conditional distribution answers, “Once $X$ is known, how should the uncertainty about $Y$ change?” Think of starting with a joint distribution over $(X,Y)$, taking the slice where $X=x$, then rescaling that slice so its total probability is 1. [bookdown](https://bookdown.org/kevin_davisross/probsim-book/conditional-distributions-1.html)
+**Core intuition:** a conditional distribution answers, “Once $X$ is known, how should the uncertainty about $Y$ change?” Think of starting with a joint distribution over $(X,Y)$, taking the slice at a fixed $X=x$ and renormalizing to get the distribution of $Y$ in that slice.
 
 ### What to know first
 
@@ -8,7 +8,7 @@ You will usually begin with a **joint distribution**, which describes two variab
 
 - **Joint:** $p_{X,Y}(x,y)$ or $f_{X,Y}(x,y)$: how likely the pair $(X,Y)$ is.
 - **Marginal:** $p_X(x)$ or $f_X(x)$: the distribution of $X$ alone, after summing or integrating out $Y$.
-- **Conditional:** $p_{Y\mid X}(y\mid x)$ or $f_{Y\mid X}(y\mid x)$: the distribution of $Y$ when $X=x$ is treated as known. [stt.msu](https://stt.msu.edu/Academics/ClassPages/uploads/US19/351-201/Lecture-08.pdf)
+- **Conditional:** $p_{Y\mid X}(y\mid x)$ or $f_{Y\mid X}(y\mid x)$: the distribution of $Y$ when $X=x$ is treated as known.
 
 For discrete variables, marginalize by summing:
 
@@ -36,7 +36,7 @@ p_{Y\mid X}(y\mid x)
 \frac{p_{X,Y}(x,y)}{p_X(x)}
 $$
 
-This is the usual conditional-probability rule applied to random variables. The denominator is the total probability in the selected $X=x$ slice, so dividing by it makes the conditional probabilities add to 1. [arxiv](https://arxiv.org/html/2603.27038v1)
+This is the usual conditional-probability rule applied to random variables. The denominator is the total probability in the selected $X=x$ slice, so dividing by it makes the conditional probabilities sum to 1 within that slice.
 
 A reliable workflow:
 
@@ -55,9 +55,9 @@ f_{Y\mid X}(y\mid x)
 \frac{f_{X,Y}(x,y)}{f_X(x)}
 $$
 
-provided $f_X(x)>0$. [en.wikipedia](https://en.wikipedia.org/wiki/Marginal_distribution)
+provided $f_X(x)>0$.
 
-The notation “given $X=x$” can feel strange because a continuous random variable has probability zero of equaling one exact number. Do not interpret the formula as ordinary division by $P(X=x)$; it is a density-based conditional distribution, obtained by taking a vertical or horizontal slice of the joint density and normalizing it. [bookdown](https://bookdown.org/kevin_davisross/probsim-book/conditional-distributions-1.html)
+The notation “given $X=x$” can feel strange because a continuous random variable has probability zero of equaling one exact number. Do not interpret the formula as ordinary division by $P(X=x)$; instead, it is a density defined on the slice $X=x$, which is constructed by conditioning in the limit.
 
 ### The reconstruction identity
 
@@ -77,7 +77,7 @@ f_{X,Y}(x,y)
 f_{Y\mid X}(y\mid x)f_X(x)
 $$
 
-This matters because many statistical models are built in exactly this order: model $X$, then model the distribution of $Y$ conditional on $X$. [stats.stackexchange](https://stats.stackexchange.com/questions/485156/what-are-the-differences-between-marginal-probability-distribution-and-condit)
+This matters because many statistical models are built in exactly this order: model $X$, then model the distribution of $Y$ conditional on $X$.
 
 ## Part 2: likely extensions
 
@@ -94,7 +94,7 @@ f_{Y\mid X}(y\mid x)
 f_Y(y)
 $$
 
-Equivalently, the joint density or pmf factorizes into marginals. [stt.msu](https://stt.msu.edu/Academics/ClassPages/uploads/US19/351-201/Lecture-08.pdf)
+Equivalently, the joint density or pmf factorizes into marginals.
 
 - **Bayes’ rule:** reverse the conditioning direction:
 
@@ -104,7 +104,7 @@ p_{X\mid Y}(x\mid y)
 \frac{p_{Y\mid X}(y\mid x)p_X(x)}{p_Y(y)}
 $$
 
-Bayes’ rule becomes especially important later in statistical inference: prior distribution $\times$ likelihood, normalized into a posterior distribution. [en.wikipedia](https://en.wikipedia.org/wiki/Bayes'_theorem)
+Bayes’ rule becomes especially important later in statistical inference: prior distribution $\times$ likelihood, normalized into a posterior distribution.
 
 ## A useful mental model
 
@@ -114,6 +114,6 @@ $$
 p(x,y)=p(y\mid x)p(x)
 $$
 
-For supervised learning, $p(y\mid x)$ is often the object of greatest interest: it describes the target’s uncertainty after observing features. Regression estimates a conditional mean such as $E[Y\mid X=x]$; probabilistic classification estimates conditional class probabilities such as $P(Y=k\mid X=x)$.
+For supervised learning, $p(y\mid x)$ is often the object of greatest interest: it describes the target’s uncertainty after observing features. Regression estimates a conditional mean such as $E[Y\mid X=x]$.
 
 Before class, try explaining in your own words why the denominator in $p_{Y\mid X}(y\mid x)$ must be $p_X(x)$, rather than $p_Y(y)$.
