@@ -137,9 +137,9 @@ $E[Y|X=x]$ is a number for each $x$. $E[Y|X]=h(X)$ is a random variable. Confusi
 4. **Independence:** if $Y\perp X$, then $E[Y|X]=E[Y]$. The converse is false: zero dependence in the mean does not imply independence.
 5. **Law of total variance:**
 $$
-\operatorname{Var}(Y)=E[\operatorname{Var}(Y|X)]+\operatorname{Var}(E[Y|X]).
+\mathrm{Var}(Y)=E[\mathrm{Var}(Y|X)]+\mathrm{Var}(E[Y|X]).
 $$
-6. **Conditional variance:** $\operatorname{Var}(Y|X=x)=E[Y^2|X=x]-(E[Y|X=x])^2$.
+6. **Conditional variance:** $\mathrm{Var}(Y|X=x)=E[Y^2|X=x]-(E[Y|X=x])^2$.
 7. **Jensen:** $\varphi(E[Y|X])\le E[\varphi(Y)|X]$ for convex $\varphi$.
 
 ### 3.3 Why it matters: the best predictor
@@ -340,7 +340,7 @@ This is linear in $x$.
 1. For $f(x,y)=2$ on $0<x<y<1$, find $f_{Y|X}$ and $E[Y|X=x]$. Answer: $Y|X=x\sim\text{Unif}(x,1)$, mean $(1+x)/2$.
 2. Show from the definition in 1.2 that $E[E[Y|\mathcal G]]=E[Y]$. Hint: take $G=\Omega$.
 3. For the bivariate normal, derive $E[Y|X=x]$ from $f_{X,Y}/f_X$ by completing the square.
-4. Use total variance to compute $\operatorname{Var}(N)$ in Example 4 from $N\sim\text{Poisson}(\lambda)$ and verify against the conditional structure of $X$.
+4. Use total variance to compute $\mathrm{Var}(N)$ in Example 4 from $N\sim\text{Poisson}(\lambda)$ and verify against the conditional structure of $X$.
 5. Explain in one paragraph why a regular conditional distribution exists for real-valued $Y$, and what could fail otherwise.
 
 ### Lecture prep questions to bring

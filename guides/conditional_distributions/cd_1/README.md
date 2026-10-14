@@ -85,7 +85,7 @@ The second section commonly builds from “find the conditional distribution” 
 
 - **Conditional CDF:** $F_{Y\mid X}(y\mid x)=P(Y\le y\mid X=x)$.
 - **Conditional expectation:** $E[Y\mid X=x]$, the conditional mean of $Y$ at a fixed value of $X$.
-- **Conditional variance:** $\operatorname{Var}(Y\mid X=x)$, the remaining spread in $Y$ after $X$ is known.
+- **Conditional variance:** $\mathrm{Var}(Y\mid X=x)$, the remaining spread in $Y$ after $X$ is known.
 - **Independence:** if $X$ and $Y$ are independent, conditioning does not change the distribution:
 
 $$
