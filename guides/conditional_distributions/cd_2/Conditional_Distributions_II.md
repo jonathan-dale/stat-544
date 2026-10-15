@@ -118,7 +118,7 @@ $$
 For a finite signed expectation, a safe assumption is $E[|g(Y)|]<\infty$. For variance, assume $E[Y^2]<\infty$, and use
 
 $$
-\operatorname{Var}(Y)
+\mathrm{Var}(Y)
 =E[(Y-E[Y])^2]
 =E[Y^2]-(E[Y])^2.
 $$
@@ -126,17 +126,17 @@ $$
 For variables with finite second moments, define covariance and, when both variances are positive, correlation:
 
 $$
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 =E[(X-E[X])(Y-E[Y])]
 =E[XY]-E[X]E[Y],
 $$
 
 $$
-\rho=\operatorname{Corr}(X,Y)
-=\frac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y},
+\rho=\mathrm{Corr}(X,Y)
+=\frac{\mathrm{Cov}(X,Y)}{\sigma_X\sigma_Y},
 \qquad
-\sigma_X=\sqrt{\operatorname{Var}(X)},\quad
-\sigma_Y=\sqrt{\operatorname{Var}(Y)}.
+\sigma_X=\sqrt{\mathrm{Var}(X)},\quad
+\sigma_Y=\sqrt{\mathrm{Var}(Y)}.
 $$
 
 Independence implies zero covariance when these moments exist. The converse is not generally true, as the last worked problem will demonstrate.
@@ -564,7 +564,7 @@ The measure-theoretic proof is even shorter: take $G=\Omega$ in the defining int
 If $E[Y^2]<\infty$, define ([MIT conditional expectation lecture](https://ocw.mit.edu/courses/18-440-probability-and-random-variables-spring-2014/45b2b86ffc4234ef33d78b9cbda159e9_MIT18_440S14_Lecture26.pdf))
 
 $$
-v(x)=\operatorname{Var}(Y\mid X=x)
+v(x)=\mathrm{Var}(Y\mid X=x)
 =E[Y^2\mid X=x]-h(x)^2.
 $$
 
@@ -572,32 +572,32 @@ The law of total variance is
 
 $$
 \boxed{
-\operatorname{Var}(Y)
-=E[v(X)]+\operatorname{Var}(h(X)).
+\mathrm{Var}(Y)
+=E[v(X)]+\mathrm{Var}(h(X)).
 }
 $$
 
 To derive it, start with
 
 $$
-E[Y^2\mid X]=\operatorname{Var}(Y\mid X)+h(X)^2.
+E[Y^2\mid X]=\mathrm{Var}(Y\mid X)+h(X)^2.
 $$
 
 Take expectations and subtract $E[Y]^2=E[h(X)]^2$:
 
 $$
 \begin{aligned}
-\operatorname{Var}(Y)
-&=E[\operatorname{Var}(Y\mid X)]
+\mathrm{Var}(Y)
+&=E[\mathrm{Var}(Y\mid X)]
 +E[h(X)^2]-E[h(X)]^2\\
-&=E[\operatorname{Var}(Y\mid X)]
-+\operatorname{Var}(E[Y\mid X]).
+&=E[\mathrm{Var}(Y\mid X)]
++\mathrm{Var}(E[Y\mid X]).
 \end{aligned}
 $$
 
 The first term is average variation remaining after $X$ is known. The second is variation among the conditional means.
 
-Consequently, $E[\operatorname{Var}(Y\mid X)]\le\operatorname{Var}(Y)$, but this is an average statement. It does not imply $\operatorname{Var}(Y\mid X=x)\le\operatorname{Var}(Y)$ for every individual $x$.
+Consequently, $E[\mathrm{Var}(Y\mid X)]\le\mathrm{Var}(Y)$, but this is an average statement. It does not imply $\mathrm{Var}(Y\mid X=x)\le\mathrm{Var}(Y)$ for every individual $x$.
 
 ### Algebraic properties, with their assumptions
 
@@ -748,7 +748,7 @@ Problem 1 of 6. Let $X\in\{0,1\}$ and $Y\in\{0,1,2\}$ have the following joint P
    E[Y^2]=\frac7{20}+4\frac12=\frac{47}{20},
    $$
    $$
-   \operatorname{Var}(Y)=\frac{47}{20}-\left(\frac{27}{20}\right)^2
+   \mathrm{Var}(Y)=\frac{47}{20}-\left(\frac{27}{20}\right)^2
    =\frac{211}{400}.
    $$
 
@@ -759,7 +759,7 @@ Problem 1 of 6. Let $X\in\{0,1\}$ and $Y\in\{0,1,2\}$ have the following joint P
    =\frac{347}{840},
    $$
    $$
-   \operatorname{Var}(h(X))
+   \mathrm{Var}(h(X))
    =\left(\frac{31}{42}\right)^2\frac3{10}\frac7{10}
    =\frac{961}{8400}.
    $$
@@ -780,7 +780,7 @@ $$
 f_{X,Y}(x,y)=c(x^2+y^2),\qquad 0<x<1,\quad0<y<1,
 $$
 
-and zero otherwise. Find $c$, both marginals, $f_{Y\mid X}$, its CDF and conditional mean, and evaluate $P(Y\le1/2\mid X=1/2)$ and $\operatorname{Var}(Y\mid X=1/2)$.
+and zero otherwise. Find $c$, both marginals, $f_{Y\mid X}$, its CDF and conditional mean, and evaluate $P(Y\le1/2\mid X=1/2)$ and $\mathrm{Var}(Y\mid X=1/2)$.
 
 1. **Normalize the joint density.**
 
@@ -863,7 +863,7 @@ and zero otherwise. Find $c$, both marginals, $f_{Y\mid X}$, its CDF and conditi
    $$
    Therefore
    $$
-   \operatorname{Var}(Y\mid X=1/2)
+   \mathrm{Var}(Y\mid X=1/2)
    =\frac{17}{35}-\left(\frac9{14}\right)^2
    =\frac{476-405}{980}=\frac{71}{980}.
    $$
@@ -937,9 +937,9 @@ and zero elsewhere. Find both marginals, both conditional distributions, $E[Y\mi
 
    Both integrate to 1 because density height times interval length equals 1. Thus
    $$
-   Y\mid X=x\sim\operatorname{Uniform}(0,m(x)),
+   Y\mid X=x\sim\mathrm{Uniform}(0,m(x)),
    \qquad
-   X\mid Y=y\sim\operatorname{Uniform}(y,2-y).
+   X\mid Y=y\sim\mathrm{Uniform}(y,2-y).
    $$
 
 4. **Derive the conditional mean and variance of $Y$.**
@@ -999,7 +999,7 @@ and zero elsewhere. Find both marginals, both conditional distributions, $E[Y\mi
    =2\left(\frac13-\frac14\right)=\frac16,
    $$
    $$
-   \operatorname{Var}(Y)=\frac16-\frac19=\frac1{18}.
+   \mathrm{Var}(Y)=\frac16-\frac19=\frac1{18}.
    $$
 
    The within-conditional component is
@@ -1014,7 +1014,7 @@ and zero elsewhere. Find both marginals, both conditional distributions, $E[Y\mi
    E[h(X)^2]=2\int_0^1\frac{x^2}{4}x\,dx=\frac18,
    $$
    $$
-   \operatorname{Var}(h(X))
+   \mathrm{Var}(h(X))
    =\frac18-\left(\frac13\right)^2=\frac1{72}.
    $$
 
@@ -1030,7 +1030,7 @@ and zero elsewhere. Find both marginals, both conditional distributions, $E[Y\mi
    $$
    Yet
    $$
-   \operatorname{Var}(X\mid Y=y)
+   \mathrm{Var}(X\mid Y=y)
    =\frac{[2(1-y)]^2}{12}
    =\frac{(1-y)^2}{3},
    $$
@@ -1043,7 +1043,7 @@ This is a concrete counterexample to “constant conditional mean implies indepe
 Problem 4 of 6. Let a random success probability $Y$ have density $f_Y(y)=6y(1-y)$ for $0<y<1$, and suppose
 
 $$
-X\mid Y=y\sim\operatorname{Binomial}(4,y).
+X\mid Y=y\sim\mathrm{Binomial}(4,y).
 $$
 
 Find the mixed joint law, marginal PMF of $X$, conditional PDF of $Y\mid X=x$, conditional moments, and $P(Y>1/2\mid X=3)$. This is a beta-binomial construction, whose posterior family is beta ([beta-binomial course handout](https://bookdown.org/kevin_davisross/stat415-handouts/beta-binomial.html)); the calculations below derive the specific result rather than assume it.
@@ -1104,7 +1104,7 @@ Find the mixed joint law, marginal PMF of $X$, conditional PDF of $Y\mid X=x$, c
 
    The beta integral makes the conditional density integrate to 1. Matching its exponents gives
    $$
-   \boxed{Y\mid X=x\sim\operatorname{Beta}(x+2,6-x).}
+   \boxed{Y\mid X=x\sim\mathrm{Beta}(x+2,6-x).}
    $$
 
 5. **Derive conditional moments from integrals.**
@@ -1133,7 +1133,7 @@ Find the mixed joint law, marginal PMF of $X$, conditional PDF of $Y\mid X=x$, c
    In particular,
    $$
    E[Y\mid X=3]=\frac58,\qquad
-   \operatorname{Var}(Y\mid X=3)=\frac{5\cdot3}{576}=\frac5{192}.
+   \mathrm{Var}(Y\mid X=3)=\frac{5\cdot3}{576}=\frac5{192}.
    $$
 
 6. **Calculate a posterior probability explicitly.** At $x=3$, the density is
@@ -1173,12 +1173,12 @@ Find the mixed joint law, marginal PMF of $X$, conditional PDF of $Y\mid X=x$, c
    $$
    E[X^2]=\frac{8+36+72+80}{35}=\frac{28}{5},
    \qquad
-   \operatorname{Var}(X)=\frac85.
+   \mathrm{Var}(X)=\frac85.
    $$
    Therefore
    $$
-   \operatorname{Var}(E[Y\mid X])
-   =\frac{\operatorname{Var}(X)}{64}=\frac1{40}.
+   \mathrm{Var}(E[Y\mid X])
+   =\frac{\mathrm{Var}(X)}{64}=\frac1{40}.
    $$
    Since $(X+2)(6-X)=-X^2+4X+12$,
    $$
@@ -1189,7 +1189,7 @@ Find the mixed joint law, marginal PMF of $X$, conditional PDF of $Y\mid X=x$, c
    $$
    E[Y^2]=6\left(\frac14-\frac15\right)=\frac3{10},
    \quad
-   \operatorname{Var}(Y)=\frac3{10}-\frac14=\frac1{20},
+   \mathrm{Var}(Y)=\frac3{10}-\frac14=\frac1{20},
    $$
    agreeing with $1/40+1/40$.
 
@@ -1275,7 +1275,7 @@ The normal conditional mean and variance are standard results ([Penn State bivar
    =50+\frac12\frac62(x-10)=50+1.5(x-10),
    $$
    $$
-   \operatorname{Var}(Y\mid X=x)
+   \mathrm{Var}(Y\mid X=x)
    =36\left(1-\frac14\right)=27.
    $$
    At $x=12$,
@@ -1300,22 +1300,22 @@ The normal conditional mean and variance are standard results ([Penn State bivar
    =50+1.5(E[X]-10)=50,
    $$
    $$
-   E[\operatorname{Var}(Y\mid X)]=27,
+   E[\mathrm{Var}(Y\mid X)]=27,
    $$
    $$
-   \operatorname{Var}(E[Y\mid X])
-   =1.5^2\operatorname{Var}(X)=2.25\cdot4=9.
+   \mathrm{Var}(E[Y\mid X])
+   =1.5^2\mathrm{Var}(X)=2.25\cdot4=9.
    $$
    Therefore
    $$
-   \operatorname{Var}(Y)=27+9=36=\sigma_Y^2.
+   \mathrm{Var}(Y)=27+9=36=\sigma_Y^2.
    $$
 
 Joint normality is essential: normal marginal distributions alone do not establish this conditional formula. Within the jointly normal family, $\rho=0$ gives independence; at $|\rho|=1$ the law is degenerate, so the two-dimensional PDF used above no longer applies ([Penn State multivariate conditional distributions](https://online.stat.psu.edu/stat505/Lesson06); [Penn State bivariate normal lesson](https://online.stat.psu.edu/stat414/Lesson21)).
 
 ### Singular joint law: deterministic conditioning and a probability kernel
 
-Problem 6 of 6. Let $X\sim\operatorname{Uniform}(-1,1)$ and $Y=X^2$. Find the marginal distribution of $Y$, explain why there is no joint Lebesgue PDF, construct $Y\mid X=x$, find $X\mid Y=y$, and verify the formal definitions and moment identities.
+Problem 6 of 6. Let $X\sim\mathrm{Uniform}(-1,1)$ and $Y=X^2$. Find the marginal distribution of $Y$, explain why there is no joint Lebesgue PDF, construct $Y\mid X=x$, find $X\mid Y=y$, and verify the formal definitions and moment identities.
 
 1. **Find the marginal CDF of $Y$.** Since $0\le X^2\le1$,
    $$
@@ -1355,7 +1355,7 @@ Problem 6 of 6. Let $X\sim\operatorname{Uniform}(-1,1)$ and $Y=X^2$. Find the ma
    $$
    $$
    E[Y\mid X=x]=x^2,\qquad
-   \operatorname{Var}(Y\mid X=x)=0.
+   \mathrm{Var}(Y\mid X=x)=0.
    $$
    This conditional law has a point mass, not an ordinary Lebesgue PDF.
 
@@ -1389,7 +1389,7 @@ Problem 6 of 6. Let $X\sim\operatorname{Uniform}(-1,1)$ and $Y=X^2$. Find the ma
    $$
    E[X\mid Y=y]=0,\qquad
    E[X^2\mid Y=y]=y,\qquad
-   \operatorname{Var}(X\mid Y=y)=y.
+   \mathrm{Var}(X\mid Y=y)=y.
    $$
 
 8. **Check total expectation and total variance.**
@@ -1402,19 +1402,19 @@ Problem 6 of 6. Let $X\sim\operatorname{Uniform}(-1,1)$ and $Y=X^2$. Find the ma
    =\frac12\int_{-1}^1x^4\,dx=\frac15,
    $$
    $$
-   \operatorname{Var}(Y)=\frac15-\frac19=\frac4{45}.
+   \mathrm{Var}(Y)=\frac15-\frac19=\frac4{45}.
    $$
    Since $Y$ is determined by $X$,
    $$
-   E[\operatorname{Var}(Y\mid X)]
-   +\operatorname{Var}(E[Y\mid X])
-   =0+\operatorname{Var}(X^2)=\frac4{45}.
+   E[\mathrm{Var}(Y\mid X)]
+   +\mathrm{Var}(E[Y\mid X])
+   =0+\mathrm{Var}(X^2)=\frac4{45}.
    $$
    In the reverse direction,
    $$
-   \operatorname{Var}(X)
-   =E[\operatorname{Var}(X\mid Y)]
-   +\operatorname{Var}(E[X\mid Y])
+   \mathrm{Var}(X)
+   =E[\mathrm{Var}(X\mid Y)]
+   +\mathrm{Var}(E[X\mid Y])
    =E[Y]+0=\frac13.
    $$
 
@@ -1539,7 +1539,7 @@ E[h(X)]=E[Y].
 $$
 
 $$
-\operatorname{Var}(Y)=E[v(X)]+\operatorname{Var}(h(X)).
+\mathrm{Var}(Y)=E[v(X)]+\mathrm{Var}(h(X)).
 $$
 
 ### Formal conditional expectation
