@@ -31,9 +31,7 @@ Expect this first portion to focus on constructing and interpreting conditional 
 When $p_X(x)>0$, use the **conditional-pmf formula**:
 
 $$
-p_{Y\mid X}(y\mid x)
-=
-\frac{p_{X,Y}(x,y)}{p_X(x)}
+p_{Y\mid X}(y\mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)}
 $$
 
 This is the usual conditional-probability rule applied to random variables. The denominator is the total probability in the selected $X=x$ slice, so dividing by it makes the conditional probabilities sum to 1 within that slice.
@@ -50,9 +48,7 @@ A reliable workflow:
 For a joint pdf, the conditional density is
 
 $$
-f_{Y\mid X}(y\mid x)
-=
-\frac{f_{X,Y}(x,y)}{f_X(x)}
+f_{Y\mid X}(y\mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)}
 $$
 
 provided $f_X(x)>0$.
@@ -64,17 +60,13 @@ The notation “given $X=x$” can feel strange because a continuous random vari
 A central identity is:
 
 $$
-p_{X,Y}(x,y)
-=
-p_{Y\mid X}(y\mid x)p_X(x)
+p_{X,Y}(x,y) = p_{Y\mid X}(y\mid x)p_X(x)
 $$
 
 or, for densities,
 
 $$
-f_{X,Y}(x,y)
-=
-f_{Y\mid X}(y\mid x)f_X(x)
+f_{X,Y}(x,y) = f_{Y\mid X}(y\mid x)f_X(x)
 $$
 
 This matters because many statistical models are built in exactly this order: model $X$, then model the distribution of $Y$ conditional on $X$.
@@ -89,9 +81,7 @@ The second section commonly builds from “find the conditional distribution” 
 - **Independence:** if $X$ and $Y$ are independent, conditioning does not change the distribution:
 
 $$
-f_{Y\mid X}(y\mid x)
-=
-f_Y(y)
+f_{Y\mid X}(y\mid x) = f_Y(y)
 $$
 
 Equivalently, the joint density or pmf factorizes into marginals.
@@ -99,9 +89,7 @@ Equivalently, the joint density or pmf factorizes into marginals.
 - **Bayes’ rule:** reverse the conditioning direction:
 
 $$
-p_{X\mid Y}(x\mid y)
-=
-\frac{p_{Y\mid X}(y\mid x)p_X(x)}{p_Y(y)}
+p_{X\mid Y}(x\mid y) = \frac{p_{Y\mid X}(y\mid x)p_X(x)}{p_Y(y)}
 $$
 
 Bayes’ rule becomes especially important later in statistical inference: prior distribution $\times$ likelihood, normalized into a posterior distribution.
