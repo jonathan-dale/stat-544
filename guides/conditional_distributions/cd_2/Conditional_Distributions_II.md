@@ -70,10 +70,13 @@ F_X(t)=P(X\le t).
 $$
 
 For a discrete law,
+
 $$
 F_X(t)=\sum_{x\le t}p_X(x);
 $$
+
 for an absolutely continuous law,
+
 $$
 F_X(t)=\int_{-\infty}^{t}f_X(x)\,dx.
 $$
@@ -242,21 +245,13 @@ The rigorous justification is the disintegration identity developed below, rathe
 For $\varepsilon>0$ with positive denominator, ordinary conditioning gives
 
 $$
-P(Y\in B\mid x<X<x+\varepsilon)
-=
-\frac{
-\int_x^{x+\varepsilon}\int_B f_{X,Y}(u,y)\,dy\,du
-}{
-\int_x^{x+\varepsilon}f_X(u)\,du
-}.
+P(Y\in B\mid x\lt X\lt+\varepsilon) = \frac{\int_x^{x+\varepsilon}\int_B f_{X,Y}(u,y)\,dy\,du}{\int_x^{x+\varepsilon}f_X(u)\,du}.
 $$
 
 If $u\mapsto\int_B f_{X,Y}(u,y)\,dy$ and $f_X(u)$ are continuous at $x$, with $f_X(x)>0$, divide numerator and denominator by $\varepsilon$ and let $\varepsilon\downarrow0$:
 
 $$
-P(Y\in B\mid x<X<x+\varepsilon)
-\longrightarrow
-\frac{\int_B f_{X,Y}(x,y)\,dy}{f_X(x)}.
+P(Y\in B\mid x<X<x+\varepsilon) \longrightarrow \frac{\int_B f_{X,Y}(x,y)\,dy}{f_X(x)}.
 $$
 
 This derives the slice-and-renormalize formula under those assumptions. It does not imply that every approximation to every probability-zero event produces the same conditional law.
@@ -282,15 +277,11 @@ $$
 The product rule reconstructs the joint distribution, and Bayes' rule reverses the conditioning direction ([CMU probability notes](https://www.stat.cmu.edu/~arinaldo/Teaching/36752/S18/Notes/lec_notes_6.pdf)):
 
 $$
-f_{X,Y}(x,y)
-=f_{Y\mid X}(y\mid x)f_X(x),
+f_{X,Y}(x,y) = f_{Y\mid X}(y\mid x)f_X(x),
 $$
 
 $$
-f_{X\mid Y}(x\mid y)
-=
-\frac{f_{Y\mid X}(y\mid x)f_X(x)}
-{\int f_{Y\mid X}(y\mid u)f_X(u)\,du}.
+f_{X\mid Y}(x\mid y) = \frac{f_{Y\mid X}(y\mid x)f_X(x)} {\int f_{Y\mid X}(y\mid u)f_X(u)\,du}.
 $$
 
 The denominator is $f_Y(y)$, not a new object to memorize. Replace densities and integration with PMFs and summation when both variables are discrete; use the appropriate mixture of the two when their types differ.
@@ -317,6 +308,7 @@ Let $\mathcal G\subseteq\mathcal F$ be a sub-sigma-algebra and assume $E|Y|<\inf
 
 1. **Measurability:** $Z$ is $\mathcal G$-measurable.
 2. **Integral matching:** For every $G\in\mathcal G$,
+
    $$
    \int_G Z\,dP=\int_G Y\,dP.
    $$
@@ -891,11 +883,7 @@ The support is rectangular, yet the variables are dependent because the conditio
 
 ### Piecewise support: geometry, total variance, and mean independence
 
-Problem 3 of 6. Let $f_{X,Y}(x,y)=1$ on
-
-$$
-S=\{(x,y):0<x<2,\ 0<y<\min(x,2-x)\},
-$$
+Problem 3 of 6. Let $f_{X,Y}(x,y)=1$ on $S=\{(x,y):0\lt x \lt 2,\ 0 \lt y \lt \min(x,2-x)\},$
 
 and zero elsewhere. Find both marginals, both conditional distributions, $E[Y\mid X=x]$, the conditional CDF of $Y$, and the total-variance decomposition of $Y$.
 
