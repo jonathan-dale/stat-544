@@ -22,6 +22,89 @@ $$
 f_X(x)=\int_{-\infty}^{\infty} f_{X,Y}(x,y)\,dy
 $$
 
+## Prereq. Definitions
+
+### Standard (undergraduate-level) definitions
+
+**Discrete case.** For discrete $X, Y$ with joint PMF $p_{X,Y}(x,y) = P(X=x, Y=y)$:
+
+- Marginal: $p_X(x) = \sum_y p_{X,Y}(x,y)$.
+- Conditional PMF of $Y$ given $X=x$, defined only when $p_X(x) > 0$:
+$$
+p_{Y|X}(y|x) = P(Y=y \mid X=x) = \frac{p_{X,Y}(x,y)}{p_X(x)}.
+$$
+- Validity: $p_{Y|X}(y|x) \ge 0$ and $\sum_y p_{Y|X}(y|x) = 1$ for each fixed $x$.
+
+**Continuous case.** For jointly continuous $X, Y$ with joint PDF $f_{X,Y}$:
+
+- Marginal: $f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y)\,dy$.
+- Conditional PDF of $Y$ given $X=x$, defined when $f_X(x) > 0$:
+$$
+f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}.
+$$
+- Validity: $f_{Y|X}(y|x)\ge 0$ and $\int f_{Y|X}(y|x)\,dy = 1$.
+- Probabilities: $P(Y\in B \mid X=x) = \int_B f_{Y|X}(y|x)\,dy$.
+
+**Product rule and independence.**
+$$
+f_{X,Y}(x,y) = f_{Y|X}(y|x)\,f_X(x) = f_{X|Y}(x|y)\,f_Y(y).
+$$
+$X$ and $Y$ are independent iff $f_{Y|X}(y|x) = f_Y(y)$ for all $x$ with $f_X(x)>0$. The support must be a product set $A\times B$, so a triangular support always means dependence.
+
+**Bayes' rule for densities.**
+$$
+f_{X|Y}(x|y) = \frac{f_{Y|X}(y|x)\,f_X(x)}{\int f_{Y|X}(y|x')\,f_X(x')\,dx'}.
+$$
+This is the engine of Bayesian inference later in the course. The denominator is just $f_Y(y)$.
+
+**Why the continuous definition is not "just conditional probability."** Here $P(X=x)=0$, so the elementary formula $P(A|B)=P(A\cap B)/P(B)$ is $0/0$. The density ratio is a definition chosen so that the product rule holds. The measure-theoretic definitions below show it is the right one, and also where it can go wrong.
+
+### Measure-theoretic definitions
+
+Setting: a probability space $(\Omega,\mathcal F,P)$; random variables $X:\Omega\to\mathbb R^d$ and $Y:\Omega\to\mathbb R$ are measurable maps. The law of $X$ is the pushforward $P_X(A) = P(X\in A)$.
+
+**Joint, marginal, and densities as Radon-Nikodym derivatives.** The joint law $P_{X,Y}$ is a measure on $\mathbb R^{d+1}$. If $P_{X,Y}\ll \mu\otimes\nu$ for $\sigma$-finite $\mu,\nu$, then the density is
+$$
+f_{X,Y} = \frac{dP_{X,Y}}{d(\mu\otimes\nu)}.
+$$
+- Taking $\mu,\nu$ as counting measure gives the PMF.
+- Taking $\mu,\nu$ as Lebesgue measure gives the PDF.
+- Taking a mix gives mixed discrete and continuous pairs under one framework.
+
+Fubini's theorem gives the marginal density $f_X(x)=\int f_{X,Y}(x,y)\,\nu(dy)$.
+
+**Conditional expectation given a sigma-algebra (Kolmogorov).** Let $Y\in L^1(P)$ and $\mathcal G\subseteq\mathcal F$ a sub-sigma-algebra. $E[Y|\mathcal G]$ is the (a.s. unique) random variable $Z$ with
+1. $Z$ is $\mathcal G$-measurable, and
+2. $\int_G Z\,dP = \int_G Y\,dP$ for every $G\in\mathcal G$.
+
+Existence comes from Radon-Nikodym applied to the signed measure $G\mapsto\int_G Y\,dP$, which is absolutely continuous with respect to $P|_{\mathcal G}$. Uniqueness is only almost sure.
+
+**Conditioning on a random variable.** $E[Y|X] := E[Y|\sigma(X)]$. By the Doob-Dynkin lemma there is a Borel function $h$ with $E[Y|X]=h(X)$. We then define
+$$
+E[Y|X=x] := h(x),
+$$
+determined only $P_X$-almost everywhere. Different versions of $h$ can differ on a $P_X$-null set of $x$ values. For continuous $X$, the value at a single point $x$ is therefore not canonically defined. The continuous formulas below give a good version.
+
+**Conditional probability** is the special case $P(A|\mathcal G)=E[\mathbf 1_A|\mathcal G]$.
+
+**Regular conditional distribution (probability kernel).** A function $\kappa:\mathbb R^d\times\mathcal B(\mathbb R)\to[0,1]$ such that
+1. for each $x$, $\kappa(x,\cdot)$ is a probability measure;
+2. for each Borel $B$, $x\mapsto\kappa(x,B)$ is measurable;
+3. disintegration holds:
+$$
+P(X\in A,\,Y\in B)=\int_A \kappa(x,B)\,P_X(dx)\quad\text{for all Borel }A,B.
+$$
+We write $\kappa(x,B)=P(Y\in B|X=x)$. A regular version exists whenever $Y$ takes values in a Polish (Borel) space, so $\mathbb R$ and $\mathbb R^k$ are covered. For general $Y$, conditional probabilities exist for each $B$ but may fail to assemble into a measure.
+
+**Link to densities.** If $P_{X,Y}\ll\mu\otimes\nu$ with density $f_{X,Y}$, a valid kernel is
+$$
+\kappa(x,B)=\int_B \frac{f_{X,Y}(x,y)}{f_X(x)}\,\nu(dy)\qquad\text{for }f_X(x)>0.
+$$
+Check: for any $g\ge 0$, $E[g(X)\mathbf 1_B(Y)]=\iint g(x)\mathbf 1_B(y)f_{X,Y}\,d\nu\,d\mu=\int g(x)\,\kappa(x,B)\,f_X(x)\,\mu(dx)$. This is exactly the disintegration identity, so the elementary definition is a theorem here.
+
+**Borel-Kolmogorov caution.** Conditioning on a null event such as $\{X=Y\}$ depends on how the event is approximated. For example, conditioning on $Y-X=0$ and on $Y/X=1$ give different answers. The statement "condition on $X=x$" is meaningful only relative to the specific random variable $X$ and the sigma-algebra $\sigma(X)$.
+
+
 ## Part 1: likely foundations
 
 Expect this first portion to focus on constructing and interpreting conditional pmfs/pdf’s.
