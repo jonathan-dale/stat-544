@@ -621,12 +621,11 @@ If only $N(s)=m$ is given, replace $N(s)$ by $m$. The shifted Poisson support st
 
 Using $X_1=T_1$ and $X_j=T_j-T_{j-1}$, the transformation from arrival epochs to gaps has a triangular Jacobian with determinant 1. Multiplying the exponential gap densities gives
 
+
 $$
-\begin{aligned}
 f_{T_1,\ldots,T_n}(t_1,\ldots,t_n)
-&=\lambda^n e^{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]}\\
-&=\lambda^n e^{-\lambda t_n}, \qquad 0<t_1<\cdots<t_n.
-\end{aligned}
+=\lambda^n e^{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]}
+=\lambda^n e^{-\lambda t_n}, \qquad 0<t_1<\cdots<t_n.
 $$
 
 
