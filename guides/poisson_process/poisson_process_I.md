@@ -625,9 +625,10 @@ $$
 \begin{aligned}
 f_{T_1,\ldots,T_n}(t_1,\ldots,t_n)
 &=\lambda^n e^{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]}\\
-&=\lambda^n e^{-\lambda t_n}
+&=\lambda^n e^{-\lambda t_n},
 \end{aligned}
 $$
+
 for $0<t_1<\cdots<t_n$.
 
 
