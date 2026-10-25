@@ -57,13 +57,13 @@ Throughout this guide, $\lambda>0$ denotes a constant event rate. Time must be m
 |---|---|---|
 | $\lambda$ | Arrival rate | Events per unit time |
 | $N(t)$ | Number of events in $(0,t]$ | Count |
-| $T_n$ | Time of the $n$th event | Time |
+| $T_n$ | Time of the $n$ th event | Time |
 | $T_0=0$ | Starting point, not an actual arrival | Time |
-| $X_n=T_n-T_{n-1}$ | $n$th interarrival time | Time |
+| $X_n=T_n-T_{n-1}$ | $n$ th interarrival time | Time |
 | $\lambda t$ | Expected count by time $t$ | Dimensionless Poisson parameter |
 | $\mathcal F_t$ | Information available through time $t$ | Sigma-algebra |
 
-Some books use $S_n$ for the $n$th arrival time and $T_n$ for an interarrival time. Translate notation before using a theorem; here $T_n$ always means an arrival epoch, not a gap.
+Some books use $S_n$ for the $n$ th arrival time and $T_n$ for an interarrival time. Translate notation before using a theorem; here $T_n$ always means an arrival epoch, not a gap.
 
 The distribution $\mathrm{Gamma}(\alpha,\lambda)$ below uses **shape $\alpha$ and rate $\lambda$**, not scale $\lambda$. Its scale is $1/\lambda$.
 
@@ -276,7 +276,7 @@ The initial condition is $p_n(0)=0$ for $n\ge1$. These are the forward equations
 
 ### Solving the recursion
 
-Multiplying the $n$th equation by $e^{\lambda t}$ gives
+Multiplying the $n$ th equation by $e^{\lambda t}$ gives
 
 $$
 \frac{d}{dt}\{e^{\lambda t}p_n(t)\}
@@ -374,7 +374,7 @@ $$
 $$
 
 $$
-\{N(t)=n\}=\{T_n\le t<T_{n+1}\}.
+\{N(t)=n\} = \{T_n\le t \le T_{n+1}\}.
 $$
 
 Each identity describes the same sample paths in two ways. These count–arrival relations underpin the Poisson/gamma connection in [Gallager’s arrival-time derivation](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Discrete_Stochastic_Processes_(Gallager)/02:_Poisson_Processes/2.02:_Definition_and_Properties_of_a_Poisson_Process).
@@ -451,7 +451,7 @@ $$
 
 The strong law gives $T_n/n\to1/\lambda$ almost surely, so $T_n\to\infty$ and the number of events on bounded intervals is finite. Exponential memorylessness then yields stationary independent increments, producing the HPP.
 
-### The $n$th arrival has a gamma distribution
+### The $n$ th arrival has a gamma distribution
 
 Since $T_n$ is a sum of $n$ independent exponential gaps,
 
@@ -521,7 +521,7 @@ $$
 
 Therefore $W_s\sim\mathrm{Exp}(\lambda)$ and is independent of the past. This deterministic-time restart result is also established directly in [Gallager’s memoryless-process theorem](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Discrete_Stochastic_Processes_(Gallager)/02:_Poisson_Processes/2.02:_Definition_and_Properties_of_a_Poisson_Process).
 
-The time until the $r$th future event after $s$ is $\mathrm{Gamma}(r,\lambda)$. But if the question is about an absolute event number $n$, first subtract the number already observed.
+The time until the $r$ th future event after $s$ is $\mathrm{Gamma}(r,\lambda)$. But if the question is about an absolute event number $n$, first subtract the number already observed.
 
 Given $N(s)=m<n$,
 
@@ -625,7 +625,7 @@ $$
 \begin{aligned}
 f_{T_1,\ldots,T_n}(t_1,\ldots,t_n)
 &=\lambda^n
-\exp\{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]\}\\
+e^{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]}\\
 &=\lambda^n e^{-\lambda t_n},
 \qquad 0<t_1<\cdots<t_n.
 \end{aligned}
@@ -1045,7 +1045,7 @@ $$
 f_{T_1\mid T_3}(u\mid t)
 =\frac{2(t-u)}{t^2}\mathbf1_{\{0<u<t\}},
 \qquad
-E[T_1\mid T_3=t]=\frac t3.
+E[T_1\mid T_3=t]=\frac{t}{3}.
 $$
 
 The integral of the density is 1. The rate cancels, but the support still depends on the conditioning time.
