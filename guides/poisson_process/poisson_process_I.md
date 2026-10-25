@@ -621,12 +621,14 @@ If only $N(s)=m$ is given, replace $N(s)$ by $m$. The shifted Poisson support st
 
 Using $X_1=T_1$ and $X_j=T_j-T_{j-1}$, the transformation from arrival epochs to gaps has a triangular Jacobian with determinant 1. Multiplying the exponential gap densities gives
 
-
 $$
+\begin{aligned}
 f_{T_1,\ldots,T_n}(t_1,\ldots,t_n)
-=\lambda^n e^{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]}
-=\lambda^n e^{-\lambda t_n}, \qquad 0<t_1<\cdots<t_n.
+&=\lambda^n e^{-\lambda[t_1+(t_2-t_1)+\cdots+(t_n-t_{n-1})]}\\
+&=\lambda^n e^{-\lambda t_n}
+\end{aligned}
 $$
+for $0<t_1<\cdots<t_n$.
 
 
 This ordered-support density is the arrival-time formula developed in [Gallager’s joint-density argument](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Discrete_Stochastic_Processes_(Gallager)/02:_Poisson_Processes/2.02:_Definition_and_Properties_of_a_Poisson_Process). Its simple algebra does not make the arrival times independent; the support and the shared gaps matter.
