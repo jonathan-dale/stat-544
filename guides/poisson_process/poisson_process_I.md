@@ -1044,7 +1044,7 @@ the conditional density and mean are
 
 $$
 f_{T_1\mid T_3}(u\mid t)
-=\frac{2(t-u)}{t^2}\mathbf{1}_{\{0 < u < t \}},
+=\frac{2(t-u)}{t^2}\mathbf{1}_{ \{0 < u < t \} },
 \qquad
 E[T_1\mid T_3=t]=\frac{t}{3}.
 $$
