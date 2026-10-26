@@ -1560,7 +1560,7 @@ N(s)\mid\{N(t)=n\}
 $$
 
 $$
-g_t(u)=\frac{\lambda(u)}{\Lambda(t)}\mathbf{1}_{\{0<u<t\}}
+g_t(u)=\frac{\lambda(u)}{\Lambda(t)}\mathbf{1}_{\{0 < u < t\}}
 $$
 
 is the density of an unordered point in the fixed-count window. Chronological points are its order statistics, not independent draws in their chronological order.
