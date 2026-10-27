@@ -26,6 +26,8 @@ plot(x, type = "l", y, col = "blue", lwd = 2,
      main = "Gamma Distribution (Shape = 5, Rate = 1)", 
      xlab = "Time / Value", ylab = "Density")
 ```
+![gamma plot](./images/000010.png)
+
 
 **Example 2:** fCalculating Cumilative Probabilities
 Suppose you are waiting for events and want to find the probability that the tortal waiting time is less than or equal to a certian value `q`. 
@@ -35,6 +37,8 @@ Suppose you are waiting for events and want to find the probability that the tor
 prob <- pgamma(8, shape = 5, rate = 1)
 print(prob)
 ```
+Output:  
+`[1] 0.9003676`
 
 **Example 3:** Generating Random Samples
 If you want to simulate 1,000 random observations from a gamma distribution, (e.g., modeling repair times, or customer wait times):
@@ -53,5 +57,9 @@ head(simulated_data)
 hist(simulated_data, breaks = 30, col = "lightblue", 
      main = "Simulated Gamma Distribution", xlab = "Value")
 ```
+Output:  
+`[1] 10.275115  3.373710  5.152571  2.117020  4.670036  3.136948`
+
+![Simulated Gamma Distribution](./images/000020.png)
 
 
