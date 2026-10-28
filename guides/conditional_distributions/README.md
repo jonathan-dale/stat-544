@@ -147,7 +147,7 @@ Read it as:
 Independence would allow you to replace the conditional probability with the marginal probability:
 
 $$
-P(G\leq 126\mid B\geq 80)=P(G\leq 126).
+P(G\leq 126\mid B\geq 80)=P(G\leq 126)
 $$
 
 But that is an assumption, not a universal rule. In a bivariate normal model, nonzero correlation rules out independence; zero correlation and independence are equivalent for this particular family. That equivalence does not hold for arbitrary distributions. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -159,26 +159,24 @@ Positive correlation means higher blood pressure tends to occur with higher gluc
 For a bivariate normal distribution:
 
 $$
-E(G\mid B=b)
-=
-117+0.3\frac{24}{7.5}(b-80).
+E(G\mid B=b)=117+0.3\frac{24}{7.5}(b-80)
 $$
 
 Thus:
 
 $$
-E(G\mid B=b)=117+0.96(b-80).
+E(G\mid B=b)=117+0.96(b-80)
 $$
 
 For example:
 
-- At $(B=80)$, the conditional mean glucose is $(117)$.
-- At $(B=90)$, the conditional mean glucose is $(126.6)$.
+- At $(B=80)$, the conditional mean glucose is $117$.
+- At $(B=90)$, the conditional mean glucose is $126.6$.
 
 The conditional variance is:
 
 $$
-\operatorname{Var}(G\mid B=b)=24^2(1-0.3^2).
+\mathrm{Var}(G\mid B=b)=24^2(1-0.3^2).
 $$
 
 So the normal model explicitly tells us how the glucose distribution changes when blood pressure is known. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -198,25 +196,25 @@ are different distributions. The first fixes blood pressure at one value; the se
 Because 80 is the mean of a normal distribution:
 
 $$
-P(B\geq80)=0.5.
+P(B\geq80)=0.5
 $$
 
 For glucose, standardize:
 
 $$
-Z=\frac{G-117}{24}.
+Z=\frac{G-117}{24}
 $$
 
 At $(G=126)$:
 
 $$
-z=\frac{126-117}{24}=0.375.
+z=\frac{126-117}{24}=0.375
 $$
 
 Therefore:
 
 $$
-P(G\leq126)=\Phi(0.375)\approx0.64617,
+P(G\leq126)=\Phi(0.375)\approx0.64617
 $$
 
 where $(\Phi)$ is the standard normal CDF.
@@ -224,15 +222,12 @@ where $(\Phi)$ is the standard normal CDF.
 If independence were assumed:
 
 $$
-P(B\geq80,\;G\leq126)
-=
-0.5(0.64617)
-\approx0.32308.
+P(B\geq80,\;G\leq126)=0.5(0.64617)\approx0.32308
 $$
 
-That is approximately $(32.31\%)$.
+That is approximately $32.31\%$.
 
-Standardization changes the units, not the dependence: standardizing $(B)$ and $(G)$ does not make them independent. Their correlation remains $(0.3)$. [probabilitycourse](https://www.probabilitycourse.com/chapter5/5_3_2_bivariate_normal_dist.php)
+Standardization changes the units, not the dependence: standardizing $B$ and $G$ does not make them independent. Their correlation remains $0.3$. [probabilitycourse](https://www.probabilitycourse.com/chapter5/5_3_2_bivariate_normal_dist.php)
 
 ### 2.6 The correlated answer and its interpretation
 
@@ -247,18 +242,15 @@ That is approximately \(27.80\%\).
 Consequently:
 
 $$
-P(G\leq126\mid B\geq80)
-=
-\frac{0.27799}{0.5}
-\approx0.55597.
+P(G\leq126\mid B\geq80)=\frac{0.27799}{0.5}\approx0.55597
 $$
 
 Compare:
 
 | Group | Probability glucose is at most 126 |
 |---|---:|
-| All patients | $(64.62\%)$ |
-| Patients with blood pressure at least 80 | $(55.60\%)$ |
+| All patients | $64.62\%$ |
+| Patients with blood pressure at least 80 | $55.60\%$ |
 
 The independence calculation overestimates the answer because it uses the overall glucose probability instead of the probability within the selected blood-pressure group.
 
@@ -277,7 +269,7 @@ For integer shape $\alpha$, it also has a useful interpretation as the sum of $\
 For your parameters:
 
 $$
-X\sim\operatorname{Gamma}\left(\alpha=2,\lambda=\frac1{500}\right).
+X\sim\mathrm{Gamma}\left(\alpha=2,\lambda=\frac1{500}\right).
 $$
 
 One mathematical representation is:
@@ -295,13 +287,13 @@ This is an interpretation of the distribution—not evidence that the actual bul
 Your rate is:
 
 $$
-\lambda=\frac1{500}=0.002\text{ per hour}.
+\lambda=\frac1{500}=0.002\text{ per hour}
 $$
 
 The equivalent scale is:
 
 $$
-\theta=\frac1\lambda=500\text{ hours}.
+\theta=\frac1\lambda=500\text{ hours}
 $$
 
 The formulas are:
@@ -321,7 +313,7 @@ E(X)=1000\text{ hours},
 $$
 
 $$
-\operatorname{Var}(X)=500{,}000\text{ hours}^2,
+\mathrm{Var}(X)=500{,}000\text{ hours}^2,
 $$
 
 $$
@@ -419,7 +411,7 @@ That means:
 The resulting random variable is described by:
 
 $$
-R=(X-150)\mid X\geq150.
+R=(X-150\mid X\geq150).
 $$
 
 In words:
@@ -481,19 +473,13 @@ Let $t$ be the age already survived, and let $r\geq0$ be an additional amount of
 Then:
 
 $$
-P(R>r)
-=
-P(X>t+r\mid X>t).
+P(R>r)=P(X>t+r\mid X>t).
 $$
 
 Using conditional probability:
 
 $$
-P(R>r)
-=
-\frac{P(X>t+r)}{P(X>t)}
-=
-\frac{S_X(t+r)}{S_X(t)}.
+P(R>r)=\frac{P(X>t+r)}{P(X>t)}=\frac{S_X(t+r)}{S_X(t)}.
 $$
 
 This equation is the general recipe for a remaining-lifetime distribution.
@@ -507,28 +493,19 @@ $$
 Therefore:
 
 $$
-P(R>r)
-=
-e^{-\lambda r}
-\frac{1+\lambda t+\lambda r}{1+\lambda t}.
+P(R>r)=e^{-\lambda r}\frac{1+\lambda t+\lambda r}{1+\lambda t}.
 $$
 
 At $t=150$, $\lambda t=0.3$:
 
 $$
-P(R>r)
-=
-e^{-r/500}
-\left(1+\frac{r}{650}\right).
+P(R>r)=e^{-r/500}\left(1+\frac{r}{650}\right).
 $$
 
 Compare this with the original survival function:
 
 $$
-P(X>r)
-=
-e^{-r/500}
-\left(1+\frac{r}{500}\right).
+P(X>r)=e^{-r/500}\left(1+\frac{r}{500}\right).
 $$
 
 They are not the same. This directly establishes that the remaining-life distribution differs from the original gamma distribution. The derivation uses the shape-2 gamma density supplied by the model. [distribution-explorer.github](https://distribution-explorer.github.io/continuous/gamma.html)
@@ -559,7 +536,7 @@ The actual count is random; it need not equal 963.
 Subtracting a constant does not change variance:
 
 $$
-\operatorname{Var}(Y-c)=\operatorname{Var}(Y).
+\mathrm{Var}(Y-c)=\mathrm{Var}(Y).
 $$
 
 But selection can change variance.
@@ -618,6 +595,7 @@ $$
 Then:
 
 $$
+\begin{aligned}
 \frac{S(t+r)}{S(t)}
 =
 \frac{e^{-\lambda(t+r)}}{e^{-\lambda t}}
@@ -625,6 +603,7 @@ $$
 e^{-\lambda r}
 =
 S(r).
+\end{aligned}
 $$
 
 For your shape-2 gamma model, the extra factor involving \(t\) does not cancel. That is why the original and remaining-life distributions differ.
@@ -681,7 +660,7 @@ Do not confuse total lifetime with remaining lifetime.
 For example:
 
 $$
-X\sim\operatorname{Gamma}(\text{shape}=2,\text{rate}=1/500).
+X\sim\mathrm{Gamma}(\text{shape}=2,\text{rate}=1/500).
 $$
 
 Write “rate” or “scale” explicitly.
@@ -723,7 +702,7 @@ Look for words such as:
 | Independent events | $P(A\cap C)=P(A)P(C)$ |
 | Standardize a normal variable | $Z=(X-\mu)/\sigma$ |
 | Subtract a constant | $E(X-c)=E(X)-c$ |
-| Spread after subtracting a constant | $\operatorname{Var}(X-c)=\operatorname{Var}(X)$ |
+| Spread after subtracting a constant | $\mathrm{Var}(X-c)=\mathrm{Var}(X)$ |
 | Remaining life after survival | $P(R>r)=S(t+r)/S(t)$ |
 
 ### Step 6: Check whether the answer makes sense
