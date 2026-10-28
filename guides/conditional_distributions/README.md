@@ -48,13 +48,13 @@ The distribution is the model. Your simulated observations are a sample from tha
 For a continuous random variable, a probability density function $f(x)$ describes where outcomes are concentrated. Probability is an area under the density:
 
 $$
-P(a\leq X\leq b)=\int_a^b f(x)\,dx.
+P(a\leq X\leq b)=\int_a^b f(x)\ dx
 $$
 
 For example:
 
 $$
-P(X\geq150)=\int_{150}^{\infty}f(x)\,dx
+P(X\geq150)=\int_{150}^{\infty}f(x)\ dx
 $$
 
 A density’s height at one point is not the probability of that exact outcome. In a continuous model, individual points have probability zero. Consequently, using $>$ rather than $\geq$ does not change the theoretical probabilities in this homework.
@@ -78,7 +78,7 @@ Blood pressure and glucose are not two unrelated lists here. They are two measur
 A joint distribution describes the pairs:
 
 $$
-(B,G).
+(B,G)
 $$
 
 The problem assumes a bivariate normal distribution: a **two-dimensional normal model**. Its parameters are two means, two variances, and a correlation. A useful property is that each individual variable has a normal marginal distribution. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -112,14 +112,14 @@ $$
 “AND” means both must hold:
 
 $$
-P(B\geq80,\;G\leq126)
+P(B\geq80,\ G\leq126)
 $$
 
 Imagine a scatterplot with blood pressure on the horizontal axis and glucose on the vertical axis:
 
-1. Draw a vertical line at \(B=80\).
+1. Draw a vertical line at $B=80$.
 2. Keep the region to its right.
-3. Draw a horizontal line at \(G=126\).
+3. Draw a horizontal line at $G=126$.
 4. Keep the region below it.
 
 The desired probability is the amount of the joint distribution in that overlapping region.
@@ -131,16 +131,16 @@ This is why calculating only a blood-pressure probability or only a glucose prob
 The general multiplication rule is:
 
 $$
-P(A\cap C)=P(A)P(C\mid A).
+P(A\cap C)=P(A)P(C\mid A)
 $$
 
 Here, that becomes:
 
 $$
-P(B\geq 80,\;G\leq 126)
+P(B\geq80,\ G\leq126)
 =
-P(B\geq 80)
-P(G\leq 126\mid B\geq 80).
+P(B\geq80)
+P(G\leq126\mid B\geq80)
 $$
 
 Read it as:
