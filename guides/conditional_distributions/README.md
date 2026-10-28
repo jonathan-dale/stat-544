@@ -515,10 +515,7 @@ They are not the same. This directly establishes that the remaining-life distrib
 The survival probability is:
 
 $$
-P(X\geq150)
-=
-e^{-0.3}(1.3)
-\approx0.96306.
+P(X\geq150)=e^{-0.3}(1.3)\approx0.96306.
 $$
 
 So approximately \(96.31\%\) of bulbs survive to 150 hours.
@@ -595,15 +592,7 @@ $$
 Then:
 
 $$
-\begin{aligned}
-\frac{S(t+r)}{S(t)}
-=
-\frac{e^{-\lambda(t+r)}}{e^{-\lambda t}}
-=
-e^{-\lambda r}
-=
-S(r).
-\end{aligned}
+\frac{S(t+r)}{S(t)}=\frac{e^{-\lambda(t+r)}}{e^{-\lambda t}}=e^{-\lambda r}=S(r).
 $$
 
 For your shape-2 gamma model, the extra factor involving \(t\) does not cancel. That is why the original and remaining-life distributions differ.
@@ -621,18 +610,13 @@ For a fair comparison:
 On a density histogram:
 
 $$
-\text{bar height}
-=
-\frac{\text{count in bin}}
-{\text{sample size}\times\text{bin width}}.
+\text{bar height}=\frac{\text{count in bin}}{\text{sample size}\times\text{bin width}}.
 $$
 
 Thus:
 
 $$
-\text{bar area}
-=
-\frac{\text{count in bin}}{\text{sample size}},
+\text{bar area}=\frac{\text{count in bin}}{\text{sample size}},
 $$
 
 so area represents relative frequency. Each histogram has total area 1. [rdocumentation](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/hist)
