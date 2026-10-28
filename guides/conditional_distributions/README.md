@@ -35,9 +35,9 @@ This lesson builds those connections step by step. If you have limited time, pri
 
 For these problems:
 
-- $(B)$: a randomly selected patient’s diastolic blood pressure.
-- $(G)$: that patient’s fasting glucose.
-- $(X)$: a randomly selected bulb’s total lifetime.
+- $B$: a randomly selected patient’s diastolic blood pressure.
+- $G$: that patient’s fasting glucose.
+- $X$: a randomly selected bulb’s total lifetime.
 
 A distribution describes how probability is spread across the possible values of a random variable.
 
@@ -45,7 +45,7 @@ The distribution is the model. Your simulated observations are a sample from tha
 
 ### Density is not probability
 
-For a continuous random variable, a probability density function $(f(x))$ describes where outcomes are concentrated. Probability is an area under the density:
+For a continuous random variable, a probability density function $f(x)$ describes where outcomes are concentrated. Probability is an area under the density:
 
 $$
 P(a\leq X\leq b)=\int_a^b f(x)\,dx.
@@ -54,7 +54,7 @@ $$
 For example:
 
 $$
-P(X\geq150)=\int_{150}^{\infty}f(x)\,dx.
+P(X\geq150)=\int_{150}^{\infty}f(x)\,dx
 $$
 
 A density’s height at one point is not the probability of that exact outcome. In a continuous model, individual points have probability zero. Consequently, using $>$ rather than $\geq$ does not change the theoretical probabilities in this homework.
@@ -63,11 +63,11 @@ A density’s height at one point is not the probability of that exact outcome. 
 
 | Description | Notation | Meaning |
 |---|---|---|
-| Density | $(f(x))$ | How concentrated outcomes are near $(x)$ |
-| Cumulative distribution function | $(F(x)=P(X\leq x)$) | Probability accumulated up to $(x)$ |
-| Survival function | $(S(x)=P(X>x)=1-F(x))$ | Probability of exceeding $(x)$ |
+| Density | $f(x)$ | How concentrated outcomes are near $x$ |
+| Cumulative distribution function | $F(x)=P(X\leq x)$ | Probability accumulated up to $x$ |
+| Survival function | $S(x)=P(X>x)=1-F(x)$ | Probability of exceeding $x$ |
 
-The survival function is particularly useful for lifetimes: $(S(150))$ is the proportion of bulbs expected to last beyond 150 hours.
+The survival function is particularly useful for lifetimes: $S(150)$ is the proportion of bulbs expected to last beyond 150 hours.
 
 ## 2. Patient problem: Understanding joint probability
 
@@ -90,10 +90,10 @@ B\sim N(80,7.5^2),
 \qquad
 G\sim N(117,24^2),
 \qquad
-\rho=0.3.
+\rho=0.3
 $$
 
-I am using $(N(\mu,\sigma^2))$, so the second argument is variance, not standard deviation.
+I am using $N(\mu,\sigma^2)$, so the second argument is variance, not standard deviation.
 
 ### 2.2 Translate the words into an event before calculating
 
@@ -106,13 +106,13 @@ Translate each phrase:
 $$
 B\geq80,
 \qquad
-G\leq126.
+G\leq126
 $$
 
 “AND” means both must hold:
 
 $$
-P(B\geq80,\;G\leq126).
+P(B\geq80,\;G\leq126)
 $$
 
 Imagine a scatterplot with blood pressure on the horizontal axis and glucose on the vertical axis:
@@ -137,10 +137,10 @@ $$
 Here, that becomes:
 
 $$
-P(B\geq80,\;G\leq126)
+P(B\geq 80,\;G\leq 126)
 =
-P(B\geq80)
-P(G\leq126\mid B\geq80).
+P(B\geq 80)
+P(G\leq 126\mid B\geq 80).
 $$
 
 Read it as:
@@ -150,7 +150,7 @@ Read it as:
 Independence would allow you to replace the conditional probability with the marginal probability:
 
 $$
-P(G\leq126\mid B\geq80)=P(G\leq126).
+P(G\leq 126\mid B\geq 80)=P(G\leq 126).
 $$
 
 But that is an assumption, not a universal rule. In a bivariate normal model, nonzero correlation rules out independence; zero correlation and independence are equivalent for this particular family. That equivalence does not hold for arbitrary distributions. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -722,7 +722,7 @@ Look for words such as:
 
 | Situation | Rule |
 |---|---|
-| Both events occur | $$P(A\cap C)=P(A)P(C\mid A)$ |
+| Both events occur | $P(A\cap C)=P(A)P(C\mid A)$ |
 | Independent events | $P(A\cap C)=P(A)P(C)$ |
 | Standardize a normal variable | $Z=(X-\mu)/\sigma$ |
 | Subtract a constant | $E(X-c)=E(X)-c$ |
