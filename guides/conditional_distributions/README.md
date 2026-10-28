@@ -35,9 +35,9 @@ This lesson builds those connections step by step. If you have limited time, pri
 
 For these problems:
 
-- $(B)$: a randomly selected patient’s diastolic blood pressure.
-- $(G)$: that patient’s fasting glucose.
-- $(X)$: a randomly selected bulb’s total lifetime.
+- $B$: a randomly selected patient’s diastolic blood pressure.
+- $G$: that patient’s fasting glucose.
+- $X$: a randomly selected bulb’s total lifetime.
 
 A distribution describes how probability is spread across the possible values of a random variable.
 
@@ -45,16 +45,16 @@ The distribution is the model. Your simulated observations are a sample from tha
 
 ### Density is not probability
 
-For a continuous random variable, a probability density function $(f(x))$ describes where outcomes are concentrated. Probability is an area under the density:
+For a continuous random variable, a probability density function $f(x)$ describes where outcomes are concentrated. Probability is an area under the density:
 
 $$
-P(a\leq X\leq b)=\int_a^b f(x)\,dx.
+P(a\leq X\leq b)=\int_a^b f(x)\ dx
 $$
 
 For example:
 
 $$
-P(X\geq150)=\int_{150}^{\infty}f(x)\,dx.
+P(X\geq150)=\int_{150}^{\infty}f(x)\ dx
 $$
 
 A density’s height at one point is not the probability of that exact outcome. In a continuous model, individual points have probability zero. Consequently, using $>$ rather than $\geq$ does not change the theoretical probabilities in this homework.
@@ -63,11 +63,11 @@ A density’s height at one point is not the probability of that exact outcome. 
 
 | Description | Notation | Meaning |
 |---|---|---|
-| Density | $(f(x))$ | How concentrated outcomes are near $(x)$ |
-| Cumulative distribution function | $(F(x)=P(X\leq x)$) | Probability accumulated up to $(x)$ |
-| Survival function | $(S(x)=P(X>x)=1-F(x))$ | Probability of exceeding $(x)$ |
+| Density | $f(x)$ | How concentrated outcomes are near $x$ |
+| Cumulative distribution function | $F(x)=P(X\leq x)$ | Probability accumulated up to $x$ |
+| Survival function | $S(x)=P(X>x)=1-F(x)$ | Probability of exceeding $x$ |
 
-The survival function is particularly useful for lifetimes: $(S(150))$ is the proportion of bulbs expected to last beyond 150 hours.
+The survival function is particularly useful for lifetimes: $S(150)$ is the proportion of bulbs expected to last beyond 150 hours.
 
 ## 2. Patient problem: Understanding joint probability
 
@@ -78,7 +78,7 @@ Blood pressure and glucose are not two unrelated lists here. They are two measur
 A joint distribution describes the pairs:
 
 $$
-(B,G).
+(B,G)
 $$
 
 The problem assumes a bivariate normal distribution: a **two-dimensional normal model**. Its parameters are two means, two variances, and a correlation. A useful property is that each individual variable has a normal marginal distribution. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -90,10 +90,10 @@ B\sim N(80,7.5^2),
 \qquad
 G\sim N(117,24^2),
 \qquad
-\rho=0.3.
+\rho=0.3
 $$
 
-I am using $(N(\mu,\sigma^2))$, so the second argument is variance, not standard deviation.
+I am using $N(\mu,\sigma^2)$, so the second argument is variance, not standard deviation.
 
 ### 2.2 Translate the words into an event before calculating
 
@@ -106,20 +106,20 @@ Translate each phrase:
 $$
 B\geq80,
 \qquad
-G\leq126.
+G\leq126
 $$
 
 “AND” means both must hold:
 
 $$
-P(B\geq80,\;G\leq126).
+P(B\geq80,\ G\leq126)
 $$
 
 Imagine a scatterplot with blood pressure on the horizontal axis and glucose on the vertical axis:
 
-1. Draw a vertical line at \(B=80\).
+1. Draw a vertical line at $B=80$.
 2. Keep the region to its right.
-3. Draw a horizontal line at \(G=126\).
+3. Draw a horizontal line at $G=126$.
 4. Keep the region below it.
 
 The desired probability is the amount of the joint distribution in that overlapping region.
@@ -131,16 +131,13 @@ This is why calculating only a blood-pressure probability or only a glucose prob
 The general multiplication rule is:
 
 $$
-P(A\cap C)=P(A)P(C\mid A).
+P(A\cap C)=P(A)P(C\mid A)
 $$
 
 Here, that becomes:
 
 $$
-P(B\geq80,\;G\leq126)
-=
-P(B\geq80)
-P(G\leq126\mid B\geq80).
+P(B\geq80,\ G\leq126)=P(B\geq80)P(G\leq126\mid B\geq80)
 $$
 
 Read it as:
@@ -150,7 +147,7 @@ Read it as:
 Independence would allow you to replace the conditional probability with the marginal probability:
 
 $$
-P(G\leq126\mid B\geq80)=P(G\leq126).
+P(G\leq 126\mid B\geq 80)=P(G\leq 126)
 $$
 
 But that is an assumption, not a universal rule. In a bivariate normal model, nonzero correlation rules out independence; zero correlation and independence are equivalent for this particular family. That equivalence does not hold for arbitrary distributions. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -162,26 +159,24 @@ Positive correlation means higher blood pressure tends to occur with higher gluc
 For a bivariate normal distribution:
 
 $$
-E(G\mid B=b)
-=
-117+0.3\frac{24}{7.5}(b-80).
+E(G\mid B=b)=117+0.3\frac{24}{7.5}(b-80)
 $$
 
 Thus:
 
 $$
-E(G\mid B=b)=117+0.96(b-80).
+E(G\mid B=b)=117+0.96(b-80)
 $$
 
 For example:
 
-- At $(B=80)$, the conditional mean glucose is $(117)$.
-- At $(B=90)$, the conditional mean glucose is $(126.6)$.
+- At $(B=80)$, the conditional mean glucose is $117$.
+- At $(B=90)$, the conditional mean glucose is $126.6$.
 
 The conditional variance is:
 
 $$
-\operatorname{Var}(G\mid B=b)=24^2(1-0.3^2).
+\mathrm{Var}(G\mid B=b)=24^2(1-0.3^2).
 $$
 
 So the normal model explicitly tells us how the glucose distribution changes when blood pressure is known. [online.stat.psu](https://online.stat.psu.edu/stat414/Lesson21.html)
@@ -201,25 +196,25 @@ are different distributions. The first fixes blood pressure at one value; the se
 Because 80 is the mean of a normal distribution:
 
 $$
-P(B\geq80)=0.5.
+P(B\geq80)=0.5
 $$
 
 For glucose, standardize:
 
 $$
-Z=\frac{G-117}{24}.
+Z=\frac{G-117}{24}
 $$
 
 At $(G=126)$:
 
 $$
-z=\frac{126-117}{24}=0.375.
+z=\frac{126-117}{24}=0.375
 $$
 
 Therefore:
 
 $$
-P(G\leq126)=\Phi(0.375)\approx0.64617,
+P(G\leq126)=\Phi(0.375)\approx0.64617
 $$
 
 where $(\Phi)$ is the standard normal CDF.
@@ -227,15 +222,12 @@ where $(\Phi)$ is the standard normal CDF.
 If independence were assumed:
 
 $$
-P(B\geq80,\;G\leq126)
-=
-0.5(0.64617)
-\approx0.32308.
+P(B\geq80,\;G\leq126)=0.5(0.64617)\approx0.32308
 $$
 
-That is approximately $(32.31\%)$.
+That is approximately $32.31\%$.
 
-Standardization changes the units, not the dependence: standardizing $(B)$ and $(G)$ does not make them independent. Their correlation remains $(0.3)$. [probabilitycourse](https://www.probabilitycourse.com/chapter5/5_3_2_bivariate_normal_dist.php)
+Standardization changes the units, not the dependence: standardizing $B$ and $G$ does not make them independent. Their correlation remains $0.3$. [probabilitycourse](https://www.probabilitycourse.com/chapter5/5_3_2_bivariate_normal_dist.php)
 
 ### 2.6 The correlated answer and its interpretation
 
@@ -250,18 +242,15 @@ That is approximately \(27.80\%\).
 Consequently:
 
 $$
-P(G\leq126\mid B\geq80)
-=
-\frac{0.27799}{0.5}
-\approx0.55597.
+P(G\leq126\mid B\geq80)=\frac{0.27799}{0.5}\approx0.55597
 $$
 
 Compare:
 
 | Group | Probability glucose is at most 126 |
 |---|---:|
-| All patients | $(64.62\%)$ |
-| Patients with blood pressure at least 80 | $(55.60\%)$ |
+| All patients | $64.62\%$ |
+| Patients with blood pressure at least 80 | $55.60\%$ |
 
 The independence calculation overestimates the answer because it uses the overall glucose probability instead of the probability within the selected blood-pressure group.
 
@@ -280,7 +269,7 @@ For integer shape $\alpha$, it also has a useful interpretation as the sum of $\
 For your parameters:
 
 $$
-X\sim\operatorname{Gamma}\left(\alpha=2,\lambda=\frac1{500}\right).
+X\sim\mathrm{Gamma}\left(\alpha=2,\lambda=\frac1{500}\right).
 $$
 
 One mathematical representation is:
@@ -298,13 +287,13 @@ This is an interpretation of the distribution—not evidence that the actual bul
 Your rate is:
 
 $$
-\lambda=\frac1{500}=0.002\text{ per hour}.
+\lambda=\frac1{500}=0.002\text{ per hour}
 $$
 
 The equivalent scale is:
 
 $$
-\theta=\frac1\lambda=500\text{ hours}.
+\theta=\frac1\lambda=500\text{ hours}
 $$
 
 The formulas are:
@@ -324,7 +313,7 @@ E(X)=1000\text{ hours},
 $$
 
 $$
-\operatorname{Var}(X)=500{,}000\text{ hours}^2,
+\mathrm{Var}(X)=500{,}000\text{ hours}^2,
 $$
 
 $$
@@ -422,7 +411,7 @@ That means:
 The resulting random variable is described by:
 
 $$
-R=(X-150)\mid X\geq150.
+R=(X-150\mid X\geq150).
 $$
 
 In words:
@@ -484,19 +473,13 @@ Let $t$ be the age already survived, and let $r\geq0$ be an additional amount of
 Then:
 
 $$
-P(R>r)
-=
-P(X>t+r\mid X>t).
+P(R>r)=P(X>t+r\mid X>t).
 $$
 
 Using conditional probability:
 
 $$
-P(R>r)
-=
-\frac{P(X>t+r)}{P(X>t)}
-=
-\frac{S_X(t+r)}{S_X(t)}.
+P(R>r)=\frac{P(X>t+r)}{P(X>t)}=\frac{S_X(t+r)}{S_X(t)}.
 $$
 
 This equation is the general recipe for a remaining-lifetime distribution.
@@ -510,28 +493,19 @@ $$
 Therefore:
 
 $$
-P(R>r)
-=
-e^{-\lambda r}
-\frac{1+\lambda t+\lambda r}{1+\lambda t}.
+P(R>r)=e^{-\lambda r}\frac{1+\lambda t+\lambda r}{1+\lambda t}.
 $$
 
 At $t=150$, $\lambda t=0.3$:
 
 $$
-P(R>r)
-=
-e^{-r/500}
-\left(1+\frac{r}{650}\right).
+P(R>r)=e^{-r/500}\left(1+\frac{r}{650}\right).
 $$
 
 Compare this with the original survival function:
 
 $$
-P(X>r)
-=
-e^{-r/500}
-\left(1+\frac{r}{500}\right).
+P(X>r)=e^{-r/500}\left(1+\frac{r}{500}\right).
 $$
 
 They are not the same. This directly establishes that the remaining-life distribution differs from the original gamma distribution. The derivation uses the shape-2 gamma density supplied by the model. [distribution-explorer.github](https://distribution-explorer.github.io/continuous/gamma.html)
@@ -541,10 +515,7 @@ They are not the same. This directly establishes that the remaining-life distrib
 The survival probability is:
 
 $$
-P(X\geq150)
-=
-e^{-0.3}(1.3)
-\approx0.96306.
+P(X\geq150)=e^{-0.3}(1.3)\approx0.96306.
 $$
 
 So approximately \(96.31\%\) of bulbs survive to 150 hours.
@@ -562,7 +533,7 @@ The actual count is random; it need not equal 963.
 Subtracting a constant does not change variance:
 
 $$
-\operatorname{Var}(Y-c)=\operatorname{Var}(Y).
+\mathrm{Var}(Y-c)=\mathrm{Var}(Y).
 $$
 
 But selection can change variance.
@@ -621,13 +592,7 @@ $$
 Then:
 
 $$
-\frac{S(t+r)}{S(t)}
-=
-\frac{e^{-\lambda(t+r)}}{e^{-\lambda t}}
-=
-e^{-\lambda r}
-=
-S(r).
+\frac{S(t+r)}{S(t)}=\frac{e^{-\lambda(t+r)}}{e^{-\lambda t}}=e^{-\lambda r}=S(r).
 $$
 
 For your shape-2 gamma model, the extra factor involving \(t\) does not cancel. That is why the original and remaining-life distributions differ.
@@ -645,18 +610,13 @@ For a fair comparison:
 On a density histogram:
 
 $$
-\text{bar height}
-=
-\frac{\text{count in bin}}
-{\text{sample size}\times\text{bin width}}.
+\text{bar height}=\frac{\text{count in bin}}{\text{sample size}\times\text{bin width}}.
 $$
 
 Thus:
 
 $$
-\text{bar area}
-=
-\frac{\text{count in bin}}{\text{sample size}},
+\text{bar area}=\frac{\text{count in bin}}{\text{sample size}},
 $$
 
 so area represents relative frequency. Each histogram has total area 1. [rdocumentation](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/hist)
@@ -684,7 +644,7 @@ Do not confuse total lifetime with remaining lifetime.
 For example:
 
 $$
-X\sim\operatorname{Gamma}(\text{shape}=2,\text{rate}=1/500).
+X\sim\mathrm{Gamma}(\text{shape}=2,\text{rate}=1/500).
 $$
 
 Write “rate” or “scale” explicitly.
@@ -722,11 +682,11 @@ Look for words such as:
 
 | Situation | Rule |
 |---|---|
-| Both events occur | $$P(A\cap C)=P(A)P(C\mid A)$ |
+| Both events occur | $P(A\cap C)=P(A)P(C\mid A)$ |
 | Independent events | $P(A\cap C)=P(A)P(C)$ |
 | Standardize a normal variable | $Z=(X-\mu)/\sigma$ |
 | Subtract a constant | $E(X-c)=E(X)-c$ |
-| Spread after subtracting a constant | $\operatorname{Var}(X-c)=\operatorname{Var}(X)$ |
+| Spread after subtracting a constant | $\mathrm{Var}(X-c)=\mathrm{Var}(X)$ |
 | Remaining life after survival | $P(R>r)=S(t+r)/S(t)$ |
 
 ### Step 6: Check whether the answer makes sense
