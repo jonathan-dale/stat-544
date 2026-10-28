@@ -137,10 +137,7 @@ $$
 Here, that becomes:
 
 $$
-P(B\geq80,\ G\leq126)
-=
-P(B\geq80)
-P(G\leq126\mid B\geq80)
+P(B\geq80,\ G\leq126)=P(B\geq80)P(G\leq126\mid B\geq80)
 $$
 
 Read it as:
