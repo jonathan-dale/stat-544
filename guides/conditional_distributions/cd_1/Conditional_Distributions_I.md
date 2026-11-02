@@ -105,7 +105,7 @@ $$
 Assume $E|g(Y)|<\infty$ when a finite signed expectation is needed. With $E[Y^2]<\infty$, variance is
 
 $$
-\operatorname{Var}(Y)=E[Y^2]-(E[Y])^2.
+\mathrm{Var}(Y)=E[Y^2]-(E[Y])^2.
 $$
 
 Ordinary conditioning on an event with positive probability is
@@ -301,17 +301,17 @@ The following expectation identities hold almost surely under integrability assu
 Conditional variance and total variance are
 
 $$
-v(x)=\operatorname{Var}(Y\mid X=x)
+v(x)=\mathrm{Var}(Y\mid X=x)
 =E[Y^2\mid X=x]-h(x)^2,
 $$
 
 $$
-\boxed{\operatorname{Var}(Y)=E[v(X)]+\operatorname{Var}(h(X)).}
+\boxed{\mathrm{Var}(Y)=E[v(X)]+\mathrm{Var}(h(X)).}
 $$
 
 To see the decomposition, take expectations of $E[Y^2\mid X]=v(X)+h(X)^2$, then subtract $E[Y]^2$. This separates average remaining variation from variation among the conditional means.
 
-Total variance implies $E[v(X)]\le\operatorname{Var}(Y)$, not necessarily $v(x)\le\operatorname{Var}(Y)$ at every individual $x$. Likewise, the tower property requires nested information, not two arbitrary conditioning variables.
+Total variance implies $E[v(X)]\le\mathrm{Var}(Y)$, not necessarily $v(x)\le\mathrm{Var}(Y)$ at every individual $x$. Likewise, the tower property requires nested information, not two arbitrary conditioning variables.
 
 ### Why this is the target of regression
 
@@ -386,7 +386,7 @@ E[X\mid Y=1]
 =\frac{25}{12}\approx2.0833.
 $$
 
-The variables are dependent because the conditional probability of $Y=1$ changes with $x$. As a variance preview, $Y^2=Y$, so $\operatorname{Var}(Y\mid X=x)=h(x)(1-h(x))$, giving $2/9,12/49,10/49$.
+The variables are dependent because the conditional probability of $Y=1$ changes with $x$. As a variance preview, $Y^2=Y$, so $\mathrm{Var}(Y\mid X=x)=h(x)(1-h(x))$, giving $2/9,12/49,10/49$.
 
 ### Continuous density on the unit square
 
@@ -570,7 +570,7 @@ The limits of the natural conditional mean are $2/3$ as $x\downarrow0$ and 1 as 
 
 ### Hierarchical discrete model: Poisson thinning
 
-Example 4. Let $N\sim\operatorname{Poisson}(\lambda)$ with $\lambda>0$, and let $X\mid N=n\sim\operatorname{Binomial}(n,p)$ with $0<p<1$. Interpret $N$ as arrivals and $X$ as the number retained independently with probability $p$; write $q=1-p$.
+Example 4. Let $N\sim\mathrm{Poisson}(\lambda)$ with $\lambda>0$, and let $X\mid N=n\sim\mathrm{Binomial}(n,p)$ with $0<p<1$. Interpret $N$ as arrivals and $X$ as the number retained independently with probability $p$; write $q=1-p$.
 
 Find the marginal of $X$, the law of $N\mid X=x$, and its conditional moments. The numerical case is $\lambda=10$, $p=0.3$, and $x=4$.
 
@@ -600,7 +600,7 @@ p_X(x)
 \end{aligned}
 $$
 
-The series is the exponential series $\sum_{m=0}^{\infty}a^m/m!=e^a$. Therefore $X\sim\operatorname{Poisson}(\lambda p)$.
+The series is the exponential series $\sum_{m=0}^{\infty}a^m/m!=e^a$. Therefore $X\sim\mathrm{Poisson}(\lambda p)$.
 
 3. **Reverse the conditioning.**
 
@@ -618,7 +618,7 @@ The factors $(\lambda p)^x/x!$ cancel, and $e^{-\lambda}/e^{-\lambda p}=e^{-\lam
 4. **Interpret the shifted Poisson law.** The result says
 
 $$
-N-X\mid X=x\sim\operatorname{Poisson}(\lambda q).
+N-X\mid X=x\sim\mathrm{Poisson}(\lambda q).
 $$
 
 It is the number discarded that has a conditional Poisson law, not the total $N$ without its shift. Indeed, if $D=N-X$, the transformed joint PMF factors as
@@ -636,7 +636,7 @@ for $x,d\ge0$. This directly proves that retained and discarded counts are indep
 
 $$
 E[N\mid X=x]=x+\lambda q,\qquad
-\operatorname{Var}(N\mid X=x)=\lambda q.
+\mathrm{Var}(N\mid X=x)=\lambda q.
 $$
 
 With $\lambda=10$, $p=0.3$, and $x=4$, the conditional law is a shift of a Poisson distribution with mean 7. Its mean is 11 and its variance is 7.
@@ -649,9 +649,9 @@ $$
 
 $$
 \begin{aligned}
-E[\operatorname{Var}(N\mid X)]
-+\operatorname{Var}(E[N\mid X])
-&=\lambda q+\operatorname{Var}(X+\lambda q)\\
+E[\mathrm{Var}(N\mid X)]
++\mathrm{Var}(E[N\mid X])
+&=\lambda q+\mathrm{Var}(X+\lambda q)\\
 &=\lambda q+\lambda p=\lambda.
 \end{aligned}
 $$
@@ -809,7 +809,7 @@ Try the questions before reading the short answers. The normal-model and kernel 
 3. Show from the formal definition that $E[E[Y\mid\mathcal G]]=E[Y]$.
 4. Is $F_{X,Y}(x,t)/F_X(x)$ generally the CDF of $Y\mid X=x$?
 5. For the jointly normal model, identify the algebraic identity needed to derive the conditional density.
-6. Use $N\mid X$ in the thinning example to recover $\operatorname{Var}(N)$.
+6. Use $N\mid X$ in the thinning example to recover $\mathrm{Var}(N)$.
 7. Does having marginal PDFs for $X$ and $Y$ guarantee a joint PDF?
 8. What does a regular conditional distribution provide beyond separate conditional probabilities for individual events?
 
@@ -820,7 +820,7 @@ Try the questions before reading the short answers. The normal-model and kernel 
 3. **Whole-space event:** Choose $G=\Omega$ in the defining integral identity.
 4. **Different conditioning event:** Where the denominator is positive, that ratio gives $P(Y\le t\mid X\le x)$, not generally $P(Y\le t\mid X=x)$.
 5. **Complete the square:** With standardized $u=(x-\mu_X)/\sigma_X$ and $v=(y-\mu_Y)/\sigma_Y$, use $u^2-2\rho uv+v^2=(v-\rho u)^2+(1-\rho^2)u^2$.
-6. **Total variance:** $\operatorname{Var}(N)=\lambda q+\operatorname{Var}(X+\lambda q)=\lambda q+\lambda p=\lambda$.
+6. **Total variance:** $\mathrm{Var}(N)=\lambda q+\mathrm{Var}(X+\lambda q)=\lambda q+\lambda p=\lambda$.
 7. **No:** The diagonal example $Y=X$ has continuous marginals but a singular joint law.
 8. **A coherent law:** At each conditioning value, the event probabilities assemble into a countably additive probability measure, with measurable dependence on the conditioning value.
 
@@ -983,13 +983,13 @@ E[Y\mid X]=h(X),\qquad E[h(X)]=E[Y].
 $$
 
 $$
-\operatorname{Var}(Y\mid X=x)=E[Y^2\mid X=x]-h(x)^2.
+\mathrm{Var}(Y\mid X=x)=E[Y^2\mid X=x]-h(x)^2.
 $$
 
 $$
-\operatorname{Var}(Y)
-=E[\operatorname{Var}(Y\mid X)]
-+\operatorname{Var}(E[Y\mid X]).
+\mathrm{Var}(Y)
+=E[\mathrm{Var}(Y\mid X)]
++\mathrm{Var}(E[Y\mid X]).
 $$
 
 Formally, $E[Y\mid X]$ is the integrable $\sigma(X)$-measurable random variable matching the integrals of $Y$ over every event in $\sigma(X)$. A regular conditional distribution is a probability kernel satisfying disintegration, determined only $P_X$-almost everywhere.

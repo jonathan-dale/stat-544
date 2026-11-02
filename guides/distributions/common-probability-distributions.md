@@ -77,13 +77,13 @@ E[g(X)]=\int g(x)f_X(x)\,dx.
 ```
 
 ```math
-\operatorname{Var}(X)=E[X^2]-E[X]^2,\qquad
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}.
+\mathrm{Var}(X)=E[X^2]-E[X]^2,\qquad
+\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}.
 ```
 
 ```math
 M_X(t)=E[e^{tX}],\quad K_X(t)=\log M_X(t),\quad
-E[X]=M_X'(0),\quad \operatorname{Var}(X)=K_X''(0).
+E[X]=M_X'(0),\quad \mathrm{Var}(X)=K_X''(0).
 ```
 
 The MGF method requires finiteness on an open interval containing zero. A characteristic function always exists; an MGF need not. Expressions below identify the MGF's finite domain when it is restricted. Multivariate analogues use a vector argument.
@@ -115,7 +115,7 @@ f_X(x)=\int f_{X\mid\Theta}(x\mid\theta)f_\Theta(\theta)\,d\theta.
 
 ```math
 E[X]=E[E(X\mid\Theta)],\quad
-\operatorname{Var}(X)=E[\operatorname{Var}(X\mid\Theta)]+\operatorname{Var}(E[X\mid\Theta]).
+\mathrm{Var}(X)=E[\mathrm{Var}(X\mid\Theta)]+\mathrm{Var}(E[X\mid\Theta]).
 ```
 
 ### Special functions
@@ -148,14 +148,14 @@ The derivations in each section explain a stochastic construction or normalizati
 Use: one binary outcome; an indicator of an event. Parameters: success probability p in [0, 1]. Support: {0, 1}.
 
 ```math
-X\sim\operatorname{Bernoulli}(p),\qquad p_X(x)=p^x(1-p)^{1-x}.
+X\sim\mathrm{Bernoulli}(p),\qquad p_X(x)=p^x(1-p)^{1-x}.
 ```
 
 At p = 0 or 1 interpret the law by its point masses, avoiding ambiguous powers.
 
 ```math
-E[X]=p,\quad \operatorname{Var}(X)=p(1-p),\quad
-\operatorname{SD}(X)=\sqrt{p(1-p)},\quad M_X(t)=1-p+pe^t.
+E[X]=p,\quad \mathrm{Var}(X)=p(1-p),\quad
+\mathrm{SD}(X)=\sqrt{p(1-p)},\quad M_X(t)=1-p+pe^t.
 ```
 
 CDF: 0 for x < 0; 1 − p for 0 ≤ x < 1; 1 for x ≥ 1. A categorical distribution with two categories is Bernoulli after coding one category as 1.
@@ -182,7 +182,7 @@ This indicator argument is often the quickest way to derive moments of counting 
 Use: successes in n independent trials with the same success probability p. Parameters: nonnegative integer n; p in [0, 1]. Support: integers 0 through n.
 
 ```math
-X\sim\operatorname{Bin}(n,p),\qquad
+X\sim\mathrm{Bin}(n,p),\qquad
 p_X(k)=\binom nk p^k(1-p)^{n-k}.
 ```
 
@@ -191,8 +191,8 @@ F_X(x)=\sum_{k=0}^{\min(n,\lfloor x\rfloor)}\binom nk p^k(1-p)^{n-k}\quad(x\ge0)
 ```
 
 ```math
-E[X]=np,\quad \operatorname{Var}(X)=np(1-p),\quad
-\operatorname{SD}(X)=\sqrt{np(1-p)},\quad
+E[X]=np,\quad \mathrm{Var}(X)=np(1-p),\quad
+\mathrm{SD}(X)=\sqrt{np(1-p)},\quad
 M_X(t)=(1-p+pe^t)^n.
 ```
 
@@ -206,7 +206,7 @@ A specified sequence containing k successes has probability equal to p to the k 
 Alternatively:
 
 ```math
-X=\sum_{i=1}^n B_i,\qquad B_i\overset{\mathrm{iid}}\sim\operatorname{Bernoulli}(p).
+X=\sum_{i=1}^n B_i,\qquad B_i\overset{\mathrm{iid}}\sim\mathrm{Bernoulli}(p).
 ```
 
 Linearity gives the mean; independence gives the variance and the product MGF.
@@ -228,15 +228,15 @@ P(X=j)=p_j,\qquad \sum_{j=1}^K p_j=1.
 If numeric labels are genuinely meaningful:
 
 ```math
-E[X]=\sum_j jp_j,\quad \operatorname{Var}(X)=\sum_j j^2p_j-\left(\sum_j jp_j\right)^2,\quad
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}.
+E[X]=\sum_j jp_j,\quad \mathrm{Var}(X)=\sum_j j^2p_j-\left(\sum_j jp_j\right)^2,\quad
+\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}.
 ```
 
 For nominal categories these moments depend on arbitrary coding and are usually uninformative. Use the one-hot indicator vector Y instead:
 
 ```math
-E[Y_j]=p_j,\quad \operatorname{Var}(Y_j)=p_j(1-p_j),\quad
-\operatorname{Cov}(Y_i,Y_j)=-p_ip_j\quad(i\ne j).
+E[Y_j]=p_j,\quad \mathrm{Var}(Y_j)=p_j(1-p_j),\quad
+\mathrm{Cov}(Y_i,Y_j)=-p_ip_j\quad(i\ne j).
 ```
 
 <details>
@@ -260,8 +260,8 @@ F_X(x)=\frac{\lfloor x\rfloor-a+1}{m}\quad(a\le x<b).
 ```
 
 ```math
-E[X]=\frac{a+b}{2},\quad \operatorname{Var}(X)=\frac{m^2-1}{12},\quad
-\operatorname{SD}(X)=\sqrt{\frac{m^2-1}{12}}.
+E[X]=\frac{a+b}{2},\quad \mathrm{Var}(X)=\frac{m^2-1}{12},\quad
+\mathrm{SD}(X)=\sqrt{\frac{m^2-1}{12}}.
 ```
 
 ```math
@@ -298,8 +298,8 @@ F_X(x)=1-(1-p)^{\lfloor x\rfloor}\quad(x\ge1).
 ```
 
 ```math
-E[X]=\frac1p,\quad \operatorname{Var}(X)=\frac{1-p}{p^2},\quad
-\operatorname{SD}(X)=\frac{\sqrt{1-p}}p.
+E[X]=\frac1p,\quad \mathrm{Var}(X)=\frac{1-p}{p^2},\quad
+\mathrm{SD}(X)=\frac{\sqrt{1-p}}p.
 ```
 
 ```math
@@ -344,8 +344,8 @@ F_X(x)=I_p(r,\lfloor x\rfloor+1)\quad(x\ge0).
 ```
 
 ```math
-E[X]=\frac{r(1-p)}p,\quad \operatorname{Var}(X)=\frac{r(1-p)}{p^2},\quad
-\operatorname{SD}(X)=\frac{\sqrt{r(1-p)}}p.
+E[X]=\frac{r(1-p)}p,\quad \mathrm{Var}(X)=\frac{r(1-p)}{p^2},\quad
+\mathrm{SD}(X)=\frac{\sqrt{r(1-p)}}p.
 ```
 
 ```math
@@ -366,8 +366,8 @@ P(X=k)=\binom{k+r-1}{r-1}p^r(1-p)^k.
 For general positive r, mix Poisson counts over a gamma intensity:
 
 ```math
-X\mid\Lambda\sim\operatorname{Pois}(\Lambda),\quad
-\Lambda\sim\operatorname{Gamma}\left(r,\text{rate}=\frac p{1-p}\right).
+X\mid\Lambda\sim\mathrm{Pois}(\Lambda),\quad
+\Lambda\sim\mathrm{Gamma}\left(r,\text{rate}=\frac p{1-p}\right).
 ```
 
 Multiplying the two densities and integrating the intensity uses the gamma integral and produces the stated PMF. Total expectation and total variance give the moments and explain the extra-Poisson variation.
@@ -390,8 +390,8 @@ p_X(k)=\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}.
 CDF: sum this PMF over supported integers no larger than x. Put p = K/N. For N > 1:
 
 ```math
-E[X]=np,\quad \operatorname{Var}(X)=np(1-p)\frac{N-n}{N-1},\quad
-\operatorname{SD}(X)=\sqrt{np(1-p)\frac{N-n}{N-1}}.
+E[X]=np,\quad \mathrm{Var}(X)=np(1-p)\frac{N-n}{N-1},\quad
+\mathrm{SD}(X)=\sqrt{np(1-p)\frac{N-n}{N-1}}.
 ```
 
 For N = 1 the variable is deterministic and has zero variance. The factor (N − n)/(N − 1) is the finite-population correction. Binomial approximation becomes appropriate when the sampling fraction is small, with adequacy depending on the required accuracy.
@@ -404,7 +404,7 @@ There are N choose n equally likely unordered samples. A sample with k successes
 For draw indicators Bi:
 
 ```math
-E[B_i]=p,\quad \operatorname{Cov}(B_i,B_j)=-\frac{p(1-p)}{N-1}\quad(i\ne j).
+E[B_i]=p,\quad \mathrm{Cov}(B_i,B_j)=-\frac{p(1-p)}{N-1}\quad(i\ne j).
 ```
 
 Summing variances plus all pairwise covariances yields the finite-population correction. Unlike binomial trials, the draws are not independent.
@@ -425,8 +425,8 @@ F_X(x)=e^{-\lambda}\sum_{k=0}^{\lfloor x\rfloor}\frac{\lambda^k}{k!}\quad(x\ge0)
 ```
 
 ```math
-E[X]=\lambda,\quad \operatorname{Var}(X)=\lambda,\quad
-\operatorname{SD}(X)=\sqrt\lambda,\quad
+E[X]=\lambda,\quad \mathrm{Var}(X)=\lambda,\quad
+\mathrm{SD}(X)=\sqrt\lambda,\quad
 M_X(t)=\exp\{\lambda(e^t-1)\}.
 ```
 
@@ -456,14 +456,14 @@ The exponential series normalizes the PMF. Differentiating the log MGF gives bot
 Use: successes in n trials with a shared random success probability; predictive counts under a beta prior. Parameters: integer n ≥ 0; α, β > 0. Support: integers 0 through n.
 
 ```math
-P\sim\operatorname{Beta}(\alpha,\beta),\quad X\mid P\sim\operatorname{Bin}(n,P),\quad
+P\sim\mathrm{Beta}(\alpha,\beta),\quad X\mid P\sim\mathrm{Bin}(n,P),\quad
 p_X(k)=\binom nk\frac{B(k+\alpha,n-k+\beta)}{B(\alpha,\beta)}.
 ```
 
 ```math
 E[X]=\frac{n\alpha}{\alpha+\beta},\quad
-\operatorname{Var}(X)=\frac{n\alpha\beta(\alpha+\beta+n)}{(\alpha+\beta)^2(\alpha+\beta+1)},\quad
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}.
+\mathrm{Var}(X)=\frac{n\alpha\beta(\alpha+\beta+n)}{(\alpha+\beta)^2(\alpha+\beta+1)},\quad
+\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}.
 ```
 
 CDF: finite sum of the PMF. Given P the trials are independent; marginally they are positively correlated. The variance exceeds the binomial variance with the same n and mean when n > 1. At α = β = 1 the count is discrete uniform on 0 through n.
@@ -480,7 +480,7 @@ Combine exponents and recognize the beta integral. For the moments:
 
 ```math
 E[X]=nE[P],\qquad
-\operatorname{Var}(X)=nE[P(1-P)]+n^2\operatorname{Var}(P).
+\mathrm{Var}(X)=nE[P(1-P)]+n^2\mathrm{Var}(P).
 ```
 
 Insert the beta moments. A single shared P is essential; drawing an independent new P for every trial gives ordinary independent Bernoulli outcomes after marginalization.
@@ -500,8 +500,8 @@ f_X(x)=\frac1{b-a},\quad F_X(x)=\frac{x-a}{b-a}\quad(a\le x\le b).
 ```
 
 ```math
-E[X]=\frac{a+b}{2},\quad \operatorname{Var}(X)=\frac{(b-a)^2}{12},\quad
-\operatorname{SD}(X)=\frac{b-a}{\sqrt{12}}.
+E[X]=\frac{a+b}{2},\quad \mathrm{Var}(X)=\frac{(b-a)^2}{12},\quad
+\mathrm{SD}(X)=\frac{b-a}{\sqrt{12}}.
 ```
 
 ```math
@@ -538,7 +538,7 @@ f_X(x)=\frac1{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
 
 ```math
 F_X(x)=\Phi\left(\frac{x-\mu}{\sigma}\right),\quad
-E[X]=\mu,\quad \operatorname{Var}(X)=\sigma^2,\quad \operatorname{SD}(X)=\sigma.
+E[X]=\mu,\quad \mathrm{Var}(X)=\sigma^2,\quad \mathrm{SD}(X)=\sigma.
 ```
 
 ```math
@@ -582,8 +582,8 @@ S_X(x)=e^{-\lambda x}.
 ```
 
 ```math
-E[X]=\frac1\lambda,\quad \operatorname{Var}(X)=\frac1{\lambda^2},\quad
-\operatorname{SD}(X)=\frac1\lambda,\quad
+E[X]=\frac1\lambda,\quad \mathrm{Var}(X)=\frac1{\lambda^2},\quad
+\mathrm{SD}(X)=\frac1\lambda,\quad
 M_X(t)=\frac\lambda{\lambda-t}\quad(t<\lambda).
 ```
 
@@ -617,14 +617,14 @@ Differentiate 1 minus this survival function to obtain the PDF. Integrating exp(
 Use: positive waiting times, sums of exponentials, and positive latent rates. Parameters: shape α > 0 and rate β > 0. Support: x > 0.
 
 ```math
-X\sim\operatorname{Gamma}(\alpha,\text{rate}=\beta),\quad
+X\sim\mathrm{Gamma}(\alpha,\text{rate}=\beta),\quad
 f_X(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},\quad
 F_X(x)=\frac{\gamma(\alpha,\beta x)}{\Gamma(\alpha)}.
 ```
 
 ```math
-E[X]=\frac\alpha\beta,\quad \operatorname{Var}(X)=\frac\alpha{\beta^2},\quad
-\operatorname{SD}(X)=\frac{\sqrt\alpha}\beta,\quad
+E[X]=\frac\alpha\beta,\quad \mathrm{Var}(X)=\frac\alpha{\beta^2},\quad
+\mathrm{SD}(X)=\frac{\sqrt\alpha}\beta,\quad
 M_X(t)=\left(\frac\beta{\beta-t}\right)^\alpha\quad(t<\beta).
 ```
 
@@ -664,8 +664,8 @@ F_X(x)=I_x(\alpha,\beta).
 
 ```math
 E[X]=\frac\alpha{\alpha+\beta},\quad
-\operatorname{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)},\quad
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}.
+\mathrm{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)},\quad
+\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}.
 ```
 
 Interior mode = (α − 1)/(α + β − 2) when both parameters exceed 1. Both below 1 give a U-shaped density; both equal 1 give uniform. Swapping the parameters gives the law of 1 − X. The MGF is finite for all real arguments because the support is bounded.
@@ -696,13 +696,13 @@ Insert q = 1 and 2. Conjugacy follows by multiplying the beta kernel by the bino
 Use: normal-sample variance, sums of squared standard normals, and classical test statistics. Parameter: degrees of freedom ν > 0. Support: x > 0.
 
 ```math
-X\sim\chi^2_\nu=\operatorname{Gamma}(\nu/2,\text{rate}=1/2),\quad
+X\sim\chi^2_\nu=\mathrm{Gamma}(\nu/2,\text{rate}=1/2),\quad
 f_X(x)=\frac{x^{\nu/2-1}e^{-x/2}}{2^{\nu/2}\Gamma(\nu/2)}.
 ```
 
 ```math
 F_X(x)=\frac{\gamma(\nu/2,x/2)}{\Gamma(\nu/2)},\quad
-E[X]=\nu,\quad \operatorname{Var}(X)=2\nu,\quad \operatorname{SD}(X)=\sqrt{2\nu}.
+E[X]=\nu,\quad \mathrm{Var}(X)=2\nu,\quad \mathrm{SD}(X)=\sqrt{2\nu}.
 ```
 
 ```math
@@ -746,8 +746,8 @@ f_T(t)=\frac{\Gamma((\nu+1)/2)}{\sqrt{\nu\pi}\,\Gamma(\nu/2)}
 
 ```math
 E[T]=0\quad(\nu>1),\qquad
-\operatorname{Var}(T)=\frac\nu{\nu-2},\quad
-\operatorname{SD}(T)=\sqrt{\frac\nu{\nu-2}}\quad(\nu>2).
+\mathrm{Var}(T)=\frac\nu{\nu-2},\quad
+\mathrm{SD}(T)=\sqrt{\frac\nu{\nu-2}}\quad(\nu>2).
 ```
 
 For ν ≤ 1 the mean is undefined; for 1 < ν ≤ 2 the variance is infinite. No finite variance or SD exists for ν ≤ 2. The MGF is infinite at every nonzero real argument. For t ≥ 0:
@@ -800,8 +800,8 @@ E[X]=\frac{d_2}{d_2-2}\quad(d_2>2).
 ```
 
 ```math
-\operatorname{Var}(X)=\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)},\quad
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}\quad(d_2>4).
+\mathrm{Var}(X)=\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)},\quad
+\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}\quad(d_2>4).
 ```
 
 Mean is infinite when d2 ≤ 2; second moment is infinite when d2 ≤ 4. There is no finite SD for d2 ≤ 4. The MGF is finite for t ≤ 0, not for positive t, so no MGF exists on a neighborhood of zero.
@@ -843,8 +843,8 @@ F_X(x)=\Phi\left(\frac{\log x-\mu}{\sigma}\right).
 
 ```math
 E[X]=e^{\mu+\sigma^2/2},\quad
-\operatorname{Var}(X)=(e^{\sigma^2}-1)e^{2\mu+\sigma^2},\quad
-\operatorname{SD}(X)=e^{\mu+\sigma^2/2}\sqrt{e^{\sigma^2}-1}.
+\mathrm{Var}(X)=(e^{\sigma^2}-1)e^{2\mu+\sigma^2},\quad
+\mathrm{SD}(X)=e^{\mu+\sigma^2/2}\sqrt{e^{\sigma^2}-1}.
 ```
 
 Median = exp(μ); mode = exp(μ − σ²). All positive integer moments exist, but the MGF is infinite for t > 0; therefore it does not exist on a neighborhood of zero. Products of independent lognormals are lognormal; sums are not generally lognormal.
@@ -877,8 +877,8 @@ F_X(x)=1-e^{-(x/\eta)^k}.
 
 ```math
 E[X]=\eta\Gamma(1+1/k),\quad
-\operatorname{Var}(X)=\eta^2\left[\Gamma(1+2/k)-\Gamma(1+1/k)^2\right],\quad
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}.
+\mathrm{Var}(X)=\eta^2\left[\Gamma(1+2/k)-\Gamma(1+1/k)^2\right],\quad
+\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}.
 ```
 
 ```math
@@ -922,8 +922,8 @@ F_X(x)=1-e^{-x^2/(2\sigma^2)}.
 
 ```math
 E[X]=\sigma\sqrt{\pi/2},\quad
-\operatorname{Var}(X)=\frac{4-\pi}{2}\sigma^2,\quad
-\operatorname{SD}(X)=\sigma\sqrt{\frac{4-\pi}{2}}.
+\mathrm{Var}(X)=\frac{4-\pi}{2}\sigma^2,\quad
+\mathrm{SD}(X)=\sigma\sqrt{\frac{4-\pi}{2}}.
 ```
 
 Mode = σ. Equivalent to Weibull shape 2 and scale σ√2. The MGF is finite for every real argument. The Rayleigh scale is the SD of either underlying normal component, not the SD of their magnitude.
@@ -934,7 +934,7 @@ Mode = σ. Equivalent to Weibull shape 2 and scale σ√2. The MGF is finite for
 For independent Z1, Z2 distributed N(0, σ²), let R be their Euclidean norm. The planar joint density is proportional to exp(−r²/(2σ²)); polar coordinates introduce Jacobian r. Integrating the angle from 0 to 2π gives the stated PDF. Equivalently:
 
 ```math
-R^2/\sigma^2\sim\chi^2_2,\qquad R^2/(2\sigma^2)\sim\operatorname{Exp}(1).
+R^2/\sigma^2\sim\chi^2_2,\qquad R^2/(2\sigma^2)\sim\mathrm{Exp}(1).
 ```
 
 Use the Weibull moment formula to obtain mean and variance.
@@ -955,8 +955,8 @@ F_X(x)=\begin{cases}\tfrac12e^{(x-\mu)/b},&x<\mu,\\1-\tfrac12e^{-(x-\mu)/b},&x\g
 ```
 
 ```math
-E[X]=\mu,\quad \operatorname{Var}(X)=2b^2,\quad
-\operatorname{SD}(X)=\sqrt2b,\quad
+E[X]=\mu,\quad \mathrm{Var}(X)=2b^2,\quad
+\mathrm{SD}(X)=\sqrt2b,\quad
 M_X(t)=\frac{e^{\mu t}}{1-b^2t^2}\quad(|t|<1/b).
 ```
 
@@ -968,7 +968,7 @@ Mean = median = mode = μ. For fixed b, maximizing a Laplace likelihood over μ 
 Let E be exponential with rate 1/b, and choose an independent sign with probability 1/2 each. Then X = μ ± E has the stated two-sided density. Alternatively:
 
 ```math
-X=\mu+E_1-E_2,\qquad E_i\overset{\mathrm{iid}}\sim\operatorname{Exp}(1/b).
+X=\mu+E_1-E_2,\qquad E_i\overset{\mathrm{iid}}\sim\mathrm{Exp}(1/b).
 ```
 
 The means cancel, variances add, and multiplying their MGFs gives the formula.
@@ -1026,8 +1026,8 @@ S_X(x)=\left(\frac{x_m}{x}\right)^\alpha.
 
 ```math
 E[X]=\frac{\alpha x_m}{\alpha-1}\quad(\alpha>1),\quad
-\operatorname{Var}(X)=\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)},\quad
-\operatorname{SD}(X)=\frac{x_m\sqrt\alpha}{(\alpha-1)\sqrt{\alpha-2}}\quad(\alpha>2).
+\mathrm{Var}(X)=\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)},\quad
+\mathrm{SD}(X)=\frac{x_m\sqrt\alpha}{(\alpha-1)\sqrt{\alpha-2}}\quad(\alpha>2).
 ```
 
 Mean is infinite for α ≤ 1; second moment is infinite for α ≤ 2. No finite SD exists for α ≤ 2. Median = xm times 2 to the power 1/α; mode = xm. The MGF is finite for t ≤ 0, not positive t. Smaller α means a heavier upper tail. A Pareto tail model does not imply the entire data distribution is Pareto.
@@ -1068,8 +1068,8 @@ Here the two-argument capital Gamma is the upper incomplete gamma integral from 
 
 ```math
 E[X]=\frac\beta{\alpha-1}\quad(\alpha>1),\quad
-\operatorname{Var}(X)=\frac{\beta^2}{(\alpha-1)^2(\alpha-2)},\quad
-\operatorname{SD}(X)=\frac\beta{(\alpha-1)\sqrt{\alpha-2}}\quad(\alpha>2).
+\mathrm{Var}(X)=\frac{\beta^2}{(\alpha-1)^2(\alpha-2)},\quad
+\mathrm{SD}(X)=\frac\beta{(\alpha-1)\sqrt{\alpha-2}}\quad(\alpha>2).
 ```
 
 Mean is infinite for α ≤ 1; second moment is infinite for α ≤ 2. No finite SD exists for α ≤ 2. Mode = β/(α + 1). The MGF is finite for t ≤ 0, not positive t.
@@ -1086,9 +1086,9 @@ E[X^q]=\beta^q\frac{\Gamma(\alpha-q)}{\Gamma(\alpha)}\quad(q<\alpha).
 For normal observations with known mean μ, an inverse-gamma prior on variance updates as:
 
 ```math
-\sigma^2\sim\operatorname{InvGamma}(\alpha,\beta)
+\sigma^2\sim\mathrm{InvGamma}(\alpha,\beta)
 \Longrightarrow
-\sigma^2\mid x\sim\operatorname{InvGamma}\left(\alpha+\frac n2,\beta+\frac12\sum_i(x_i-\mu)^2\right).
+\sigma^2\mid x\sim\mathrm{InvGamma}\left(\alpha+\frac n2,\beta+\frac12\sum_i(x_i-\mu)^2\right).
 ```
 
 This update assumes μ is known; estimating or integrating an unknown mean changes the derivation.
@@ -1108,13 +1108,13 @@ P(\mathbf X=\mathbf x)=\frac{n!}{\prod_{j=1}^Kx_j!}\prod_{j=1}^Kp_j^{x_j},\qquad
 ```
 
 ```math
-E[X_j]=np_j,\quad \operatorname{Var}(X_j)=np_j(1-p_j),\quad
-\operatorname{SD}(X_j)=\sqrt{np_j(1-p_j)},\quad
-\operatorname{Cov}(X_i,X_j)=-np_ip_j\ (i\ne j).
+E[X_j]=np_j,\quad \mathrm{Var}(X_j)=np_j(1-p_j),\quad
+\mathrm{SD}(X_j)=\sqrt{np_j(1-p_j)},\quad
+\mathrm{Cov}(X_i,X_j)=-np_ip_j\ (i\ne j).
 ```
 
 ```math
-\operatorname{Cov}(\mathbf X)=n[\operatorname{diag}(\mathbf p)-\mathbf p\mathbf p^T],\quad
+\mathrm{Cov}(\mathbf X)=n[\mathrm{diag}(\mathbf p)-\mathbf p\mathbf p^T],\quad
 M_{\mathbf X}(\mathbf t)=\left(\sum_jp_je^{t_j}\right)^n.
 ```
 
@@ -1146,13 +1146,13 @@ This is a density in K − 1 free coordinates, with the last coordinate determin
 
 ```math
 E[P_j]=\frac{\alpha_j}{\alpha_0},\quad
-\operatorname{Var}(P_j)=\frac{\alpha_j(\alpha_0-\alpha_j)}{\alpha_0^2(\alpha_0+1)},\quad
-\operatorname{SD}(P_j)=\sqrt{\operatorname{Var}(P_j)}.
+\mathrm{Var}(P_j)=\frac{\alpha_j(\alpha_0-\alpha_j)}{\alpha_0^2(\alpha_0+1)},\quad
+\mathrm{SD}(P_j)=\sqrt{\mathrm{Var}(P_j)}.
 ```
 
 ```math
-\operatorname{Cov}(P_i,P_j)=-\frac{\alpha_i\alpha_j}{\alpha_0^2(\alpha_0+1)}\quad(i\ne j),\qquad
-P_j\sim\operatorname{Beta}(\alpha_j,\alpha_0-\alpha_j).
+\mathrm{Cov}(P_i,P_j)=-\frac{\alpha_i\alpha_j}{\alpha_0^2(\alpha_0+1)}\quad(i\ne j),\qquad
+P_j\sim\mathrm{Beta}(\alpha_j,\alpha_0-\alpha_j).
 ```
 
 For a fixed mean vector, larger α0 concentrates the distribution more tightly around that mean. Multinomial conjugacy updates each αj by its observed category count. K = 2 reduces to beta. The MGF is finite for all finite real vector arguments because the simplex is bounded.
@@ -1163,8 +1163,8 @@ For a fixed mean vector, larger α0 concentrates the distribution more tightly a
 Let Gj be independent Gamma(αj, rate c) variables with a common rate. Put T equal to their sum and Pj = Gj/T. The transformation from the K − 1 free proportions and T has absolute Jacobian T to the K − 1. The joint density factors into:
 
 ```math
-T\sim\operatorname{Gamma}(\alpha_0,\text{rate}=c),\qquad
-\mathbf P\sim\operatorname{Dirichlet}(\boldsymbol\alpha),\qquad T\perp\mathbf P.
+T\sim\mathrm{Gamma}(\alpha_0,\text{rate}=c),\qquad
+\mathbf P\sim\mathrm{Dirichlet}(\boldsymbol\alpha),\qquad T\perp\mathbf P.
 ```
 
 Integrating out T produces the normalizing constant. Mixed raw moments are:
@@ -1191,8 +1191,8 @@ f_{\mathbf X}(\mathbf x)=\frac{\exp[-\tfrac12(\mathbf x-\boldsymbol\mu)^T\Sigma^
 ```
 
 ```math
-E[\mathbf X]=\boldsymbol\mu,\quad \operatorname{Cov}(\mathbf X)=\Sigma,\quad
-\operatorname{SD}(X_j)=\sqrt{\Sigma_{jj}},\quad
+E[\mathbf X]=\boldsymbol\mu,\quad \mathrm{Cov}(\mathbf X)=\Sigma,\quad
+\mathrm{SD}(X_j)=\sqrt{\Sigma_{jj}},\quad
 M_{\mathbf X}(\mathbf t)=e^{\mathbf t^T\boldsymbol\mu+\mathbf t^T\Sigma\mathbf t/2}.
 ```
 
