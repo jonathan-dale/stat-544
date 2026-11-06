@@ -17,7 +17,7 @@ This problem asks how accurately an observed event proportion estimates the true
 Each $X_i$ is a Bernoulli random variable: it equals $1$ with probability $p=0.20$ and $0$ otherwise. Because the patients’ outcomes are independent and have the same event probability, the total number of patients experiencing an event satisfies
 
 $$
-S_n=\sum_{i=1}^n X_i\sim\operatorname{Binomial}(n,0.20).
+S_n=\sum_{i=1}^n X_i\sim\mathrm{Binomial}(n,0.20).
 $$
 
 The observed proportion is simply that count divided by the sample size:
@@ -40,7 +40,7 @@ $$
 Also, $X_i^2=X_i$, because both $0^2=0$ and $1^2=1$. Therefore,
 
 $$
-\operatorname{Var}(X_i)
+\mathrm{Var}(X_i)
 =E(X_i^2)-[E(X_i)]^2
 =p-p^2
 =p(1-p).
@@ -58,8 +58,8 @@ $$
 and
 
 $$
-\operatorname{Var}(\widehat p_n)
-=\frac1{n^2}\sum_{i=1}^n\operatorname{Var}(X_i)
+\mathrm{Var}(\widehat p_n)
+=\frac1{n^2}\sum_{i=1}^n\mathrm{Var}(X_i)
 =\frac{np(1-p)}{n^2}
 =\frac{p(1-p)}n.
 $$
@@ -68,7 +68,7 @@ Substituting $p=0.20$,
 
 $$
 \boxed{E(\widehat p_n)=0.20,\qquad
-\operatorname{Var}(\widehat p_n)=\frac{0.16}{n}.}
+\mathrm{Var}(\widehat p_n)=\frac{0.16}{n}.}
 $$
 
 Thus, the estimator is **unbiased**: its average over repeated samples equals the true proportion. Increasing $n$ does not change that center; it reduces the spread around it.
@@ -80,7 +80,7 @@ Chebyshev’s inequality says that, for a random variable $Y$ with finite varian
 
 $$
 P\bigl(|Y-E(Y)|\geq\varepsilon\bigr)
-\leq\frac{\operatorname{Var}(Y)}{\varepsilon^2}.
+\leq\frac{\mathrm{Var}(Y)}{\varepsilon^2}.
 $$
 
 In words, variance limits the probability of being far from the mean. The same upper bound applies to a strict “$>$” event because that event is contained in the corresponding “$\geq$” event.
@@ -233,9 +233,9 @@ Explain why increasing sample size improves the stability of the observed event 
 The variance and standard deviation of the observed proportion are
 
 $$
-\operatorname{Var}(\widehat p_n)=\frac{0.16}{n},
+\mathrm{Var}(\widehat p_n)=\frac{0.16}{n},
 \qquad
-\operatorname{SD}(\widehat p_n)=\frac{0.40}{\sqrt n}.
+\mathrm{SD}(\widehat p_n)=\frac{0.40}{\sqrt n}.
 $$
 
 Increasing sample size therefore makes the sampling distribution more concentrated around $0.20$. For example, multiplying the sample size by four halves the standard deviation.

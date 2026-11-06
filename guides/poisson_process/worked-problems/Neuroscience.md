@@ -19,7 +19,7 @@ The key is to separate two kinds of randomness: **how many spikes occur** and **
 “20 spikes per second” means an average rate of 20, not exactly 20 spikes every second. Let $N(t)$ be the total number of spikes in an interval of length $t$ seconds; then the Poisson-process model gives
 
 $$
-N(t)\sim\operatorname{Poisson}(20t).
+N(t)\sim\mathrm{Poisson}(20t).
 $$
 
 More generally, a process with rate $\lambda$ has a Poisson count with mean $\lambda t$ over an interval of length $t$. The probability of exactly $k$ events is ([Statistics LibreTexts](https://stats.libretexts.org/Bookshelves/Probability_Theory/Probability_Mathematical_Statistics_and_Stochastic_Processes_(Siegrist)/14:_The_Poisson_Process/14.05:_Thinning_and_Superpositon)):
@@ -39,13 +39,13 @@ Suppose each event in a Poisson process of rate $\lambda$ is independently label
 For this problem, define $H(t)$ and $L(t)$ as the high- and low-amplitude counts in the same $t$-second interval. We therefore have
 
 $$
-H(t)\sim\operatorname{Poisson}(20\cdot0.30\cdot t)
-=\operatorname{Poisson}(6t),
+H(t)\sim\mathrm{Poisson}(20\cdot0.30\cdot t)
+=\mathrm{Poisson}(6t),
 $$
 
 $$
-L(t)\sim\operatorname{Poisson}(20\cdot0.70\cdot t)
-=\operatorname{Poisson}(14t).
+L(t)\sim\mathrm{Poisson}(20\cdot0.70\cdot t)
+=\mathrm{Poisson}(14t).
 $$
 
 ## Applying the model
@@ -69,7 +69,7 @@ Indeed, $6+14=20$. These are average rates, not guaranteed counts in each second
 We only care about the high-amplitude process, so use its rate of 6 rather than the total rate of 20. Over one second, its expected count is $6(1)=6$:
 
 $$
-H(1)\sim\operatorname{Poisson}(6).
+H(1)\sim\mathrm{Poisson}(6).
 $$
 
 Substitute $k=4$ into the Poisson formula:
@@ -87,7 +87,7 @@ That is about **13.39%**. There is no restriction on how many low-amplitude spik
 The low-amplitude rate is 14 per second, but the interval is only half a second. Thus the expected count for this interval is $14(0.5)=7$:
 
 $$
-L(0.5)\sim\operatorname{Poisson}(7).
+L(0.5)\sim\mathrm{Poisson}(7).
 $$
 
 “No spikes” means a count of zero, so
@@ -160,7 +160,7 @@ Consider an interval of length $t$ seconds, and write its expected total count a
 The total count is Poisson:
 
 $$
-N\sim\operatorname{Poisson}(\mu),
+N\sim\mathrm{Poisson}(\mu),
 \qquad
 P(N=n)=\frac{e^{-\mu}\mu^n}{n!}.
 $$
@@ -168,7 +168,7 @@ $$
 Now suppose we are told that exactly $n$ spikes occurred. Each of those $n$ spikes independently has probability $p$ of being high, so
 
 $$
-H\mid N=n\sim\operatorname{Binomial}(n,p).
+H\mid N=n\sim\mathrm{Binomial}(n,p).
 $$
 
 Consequently,
@@ -255,20 +255,20 @@ $$
 That is exactly the Poisson probability formula with mean $\mu p$. Since $\mu=\lambda t$,
 
 $$
-\boxed{H(t)\sim\operatorname{Poisson}(\lambda pt)}.
+\boxed{H(t)\sim\mathrm{Poisson}(\lambda pt)}.
 $$
 
 For your neuron, this gives
 
 $$
-H(t)\sim\operatorname{Poisson}(20\cdot0.30\cdot t)
-=\operatorname{Poisson}(6t).
+H(t)\sim\mathrm{Poisson}(20\cdot0.30\cdot t)
+=\mathrm{Poisson}(6t).
 $$
 
 Replacing $p$ with $1-p=0.70$ gives the low-amplitude result. Thus,
 
 $$
-L(t)\sim\operatorname{Poisson}(14t).
+L(t)\sim\mathrm{Poisson}(14t).
 $$
 
 ## Why the two counts are independent

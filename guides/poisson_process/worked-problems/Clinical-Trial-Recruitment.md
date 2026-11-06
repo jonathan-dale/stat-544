@@ -58,7 +58,7 @@ $$
 Let $N(t)$ be the total number of eligible patients arriving over $t$ weeks. Our combined model is
 
 $$
-N(t)\sim\operatorname{Poisson}(10t).
+N(t)\sim\mathrm{Poisson}(10t).
 $$
 
 ### Part (b): Enrolled-patient rate
@@ -76,7 +76,7 @@ $$
 Let $X(t)$ be the number enrolled over $t$ weeks. The model we will use for all remaining parts is
 
 $$
-\boxed{X(t)\sim\operatorname{Poisson}(6t)}.
+\boxed{X(t)\sim\mathrm{Poisson}(6t)}.
 $$
 
 As a check, we could thin each hospital separately: their enrollment rates would be $5(0.60)=3$, $3(0.60)=1.8$, and $2(0.60)=1.2$. Adding those rates gives the same total, $6$ enrollments per week.
@@ -108,7 +108,7 @@ There is about a **10.33%** chance of exactly 8 enrollments in one week. Notice 
 Two weeks means $t=2$, so
 
 $$
-X(2)\sim\operatorname{Poisson}(12).
+X(2)\sim\mathrm{Poisson}(12).
 $$
 
 “At least 15” includes $15,16,17,\ldots$, so the complementary event is “14 or fewer.” Using that complement avoids adding infinitely many probabilities:
@@ -134,7 +134,7 @@ E[X(12)]
 =\boxed{72\text{ enrolled patients}}.
 $$
 
-This is an average over repeated hypothetical 12-week recruitment periods, not a guarantee. The full model for that interval is $X(12)\sim\operatorname{Poisson}(72)$.
+This is an average over repeated hypothetical 12-week recruitment periods, not a guarantee. The full model for that interval is $X(12)\sim\mathrm{Poisson}(72)$.
 
 ## Part (f): Why isn’t total enrollment binomial?
 
@@ -144,17 +144,17 @@ For example, if we are told that exactly $n$ eligible patients arrived during th
 
 $$
 \boxed{X(12)\mid N(12)=n
-\sim\operatorname{Binomial}(n,0.60)}.
+\sim\mathrm{Binomial}(n,0.60)}.
 $$
 
 But the problem does not give a fixed $n$. Instead, under our arrival model,
 
 $$
-N(12)\sim\operatorname{Poisson}(10\cdot12)
-=\operatorname{Poisson}(120).
+N(12)\sim\mathrm{Poisson}(10\cdot12)
+=\mathrm{Poisson}(120).
 $$
 
-The number 120 is the **expected number of eligible arrivals**, not a fixed number of trials. Replacing the random $N(12)$ with its mean would incorrectly turn the model into $\operatorname{Binomial}(120,0.60)$.
+The number 120 is the **expected number of eligible arrivals**, not a fixed number of trials. Replacing the random $N(12)$ with its mean would incorrectly turn the model into $\mathrm{Binomial}(120,0.60)$.
 
 ### How the conditional binomial becomes Poisson
 
@@ -183,11 +183,11 @@ P(X(12)=k)
 \end{aligned}
 $$
 
-That is exactly the mass function of $\operatorname{Poisson}(72)$, illustrating the general thinning derivation. [probabilitycourse](https://www.probabilitycourse.com/chapter11/11_1_3_merging_and_splitting_poisson_processes.php)
+That is exactly the mass function of $\mathrm{Poisson}(72)$, illustrating the general thinning derivation. [probabilitycourse](https://www.probabilitycourse.com/chapter11/11_1_3_merging_and_splitting_poisson_processes.php)
 
 So a concise answer for part (f) is:
 
-> I disagree with “must be binomial.” Conditional on exactly $n$ eligible arrivals, enrollment is $\operatorname{Binomial}(n,0.60)$. However, the eligible-arrival count is random and Poisson, so the unconditional 12-week enrollment count is $\operatorname{Poisson}(72)$.
+> I disagree with “must be binomial.” Conditional on exactly $n$ eligible arrivals, enrollment is $\mathrm{Binomial}(n,0.60)$. However, the eligible-arrival count is random and Poisson, so the unconditional 12-week enrollment count is $\mathrm{Poisson}(72)$.
 
 This is an exact result under the Poisson-process assumptions, not a small-probability approximation to a binomial distribution. The consent probability being $0.60$ does not cause a problem.
 
