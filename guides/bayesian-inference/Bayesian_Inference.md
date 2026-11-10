@@ -123,7 +123,7 @@ $$
 
 when the conditional probabilities are defined. This is the law of total probability: calculate the observation probability within each possible source, then average using the source probabilities.
 
-Independence instead means $P(A\cap B)=P(A)P(B)$. Disjoint events cannot both occur, whereas independent events do not change one another's probabilities; two disjoint events with positive probabilities cannot be independent. Conditional independence requires this factorization within the distribution given the conditioning information, not necessarily in the unconditional distribution.
+Independence means $P(A\cap B)=P(A)P(B)$. Disjoint events cannot both occur, whereas independent events do not change one another's probabilities; two disjoint events with positive probabilities cannot be independent. Conditional independence requires this factorization within the distribution given the conditioning information, not necessarily in the unconditional distribution.
 
 ### Joint, marginal, and conditional distributions
 
@@ -243,7 +243,7 @@ $$
 \end{aligned}
 $$
 
-The first term vanishes by conditional independence, but the second need not vanish. Observing one success provides information about the common parameter and therefore about other trials. This is the same shared-latent-rate mechanism discussed in the Poisson-process guide.
+The first term vanishes by conditional independence, but the second need not vanish. Observing one success provides information about the common parameter and therefore about other trials. This is the same shared-latent-rate mechanism discussed in the [Poisson-process guide](../poisson_process/README.md).
 
 ### The algebra and calculus used below
 
@@ -341,10 +341,7 @@ Multiply each likelihood by its prior, then divide every resulting weight by the
 For two hypotheses with positive prior weights and positive likelihoods, division of their posterior probabilities gives
 
 $$
-\frac{P(H_1\mid D)}{P(H_2\mid D)}
-=
-\frac{P(H_1)}{P(H_2)}
-\frac{P(D\mid H_1)}{P(D\mid H_2)}.
+\frac{P(H_1\mid D)}{P(H_2\mid D)}=\frac{P(H_1)}{P(H_2)}\frac{P(D\mid H_1)}{P(D\mid H_2)}.
 $$
 
 The likelihood ratio here is the Bayes factor for these two simple hypotheses. It multiplies prior odds to produce posterior odds. Evidence can favor $H_2$ while the posterior still favors $H_1$, if the starting odds for $H_1$ were sufficiently large.

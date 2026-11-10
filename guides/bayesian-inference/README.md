@@ -1,6 +1,6 @@
 # Bayesian Inference
 
-[Bayesian Inference](Bayesian_Inference.md) is a single-part STAT 544 study guide that builds from probability and statistics prerequisites to Bayes updates, beta-binomial conjugacy, posterior summaries, credible intervals, and loss-based estimation. It follows the supplied Fall 2026 lecture slides and includes explicit derivations, seven worked examples, seventeen practice problems with solutions, and a compact formula reference.
+[Bayesian Inference](Bayesian_Inference.md) is a single-part STAT 544 study guide that builds from probability and statistics prerequisites to Bayes updates, beta-binomial conjugacy, posterior summaries, credible intervals, and loss-based estimation. It follows the supplied Fall 2026 lecture slides and includes explicit derivations, seven worked examples, seventeen practice problems with solutions, and a [compact formula reference](./Bayesian_Inference.md#compact-reference-sheet).
 
 Clearly labeled extensions connect the lecture to posterior prediction, Poisson-gamma and normal-normal inference, prior sensitivity, improper priors, parameter transformations, and point-null comparisons. The explanations assume graduate-level goals without assuming prior undergraduate statistics coursework.
 
