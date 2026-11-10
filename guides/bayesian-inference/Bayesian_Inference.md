@@ -1093,10 +1093,7 @@ $$
 This is a gamma kernel with shape $a+s$ and rate $b+T$. Hence
 
 $$
-\boxed{
-\Lambda\mid\boldsymbol x
-\sim\mathrm{Gamma}(a+s,b+T).
-}
+\boxed{\Lambda\mid\boldsymbol x\sim\mathrm{Gamma}(a+s,b+T).}
 $$
 
 Writing $a_*=a+s$, $b_*=b+T$,
